@@ -1,29 +1,11 @@
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+const menuBtn = document.querySelector('.hamburger');
+const menuBar = document.querySelector('.menu-bar');
+const menuList = document.querySelector('.nav-menu');
 
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + window.innerHeight;
+menuBtn.addEventListener('click', showMenu);
 
-    sections.forEach(section => {
-        if (scrollPosition > section.offsetTop + 100) {
-            section.classList.add('visible');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-});
+function showMenu(){
+    menuBtn.classList.toggle('is-active');
+    menuBar.classList.toggle('is-active');
+    menuList.classList.toggle('is-active');
+}
