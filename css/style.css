@@ -140,7 +140,7 @@ nav img {
   align-items: center;
   gap: 2.5rem;
 
-  background: #333333; /* Cambiado a gris oscuro */
+  background:#2c2c2c; /* Gris noche */
   transition: all 0.5s ease-in-out;
 
   z-index: 2;
@@ -317,7 +317,7 @@ main {
   display: inline-block;
   width: 12rem;
   margin: 0.5rem 1.8rem;
-  margin-left: 0;
+   /* margin-left: 0; */
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   background: #333333; /* Cambiado a gris oscuro */
