@@ -343,15 +343,17 @@ main {
 
 .cta2::after,
 .nav-link:nth-child(4)::after {
-  position: absolute;
-  content: "";
-  top: -1.8px;
-  bottom: -1.8px;
-  left: -1.8px;
-  right: -1.8px;
-  background: linear-gradient(180deg, rgba(24, 185, 207, 0.9) 0%, #3b53a8 100%);
-  z-index: -1;
-  border-radius: 1.5rem;
+  display: inline-block;
+  width: 12rem;
+  margin: 0.5rem 1.8rem;
+  margin-left: 0;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background: #333333; /* Cambiado a gris oscuro */
+
+  text-align: center;
+  text-decoration: none;
+  color: rgb(204, 213, 243);
 }
 
 .main-social-links {
