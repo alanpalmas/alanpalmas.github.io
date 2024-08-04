@@ -234,9 +234,9 @@ nav img {
 }
 
 .nav-link:nth-child(4):hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
   background: transparent;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .nav-link:nth-child(4) a {
@@ -333,8 +333,8 @@ main {
 }
 
 .cta:hover {
-  transform: scale(1.05);
-  transition: transform 0.4s ease-in-out;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
 }
 
 .cta2,
