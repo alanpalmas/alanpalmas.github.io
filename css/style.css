@@ -577,8 +577,8 @@ h3 {
 }
 
 #contact span {
-  font-family: "Satoshi 500";
-  font-size: 1.6rem;
+   /* font-family: "Satoshi 500"; */
+  /* font-size: 1.6rem; */
   color: rgba(126, 146, 217, 1);
 }
 
