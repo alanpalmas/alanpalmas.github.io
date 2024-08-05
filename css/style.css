@@ -420,13 +420,15 @@ main {
 }
 
 .img-box {
-  position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 15em;
   justify-content: center;
   align-items: center;
   margin-top: 3.5rem;
-  padding: 0.3rem;
+  padding: 1rem;
   border-radius: 1.8rem;
+
   /* background: linear-gradient(
     99.41deg,
     #002cc7 -39.51%,
@@ -738,8 +740,11 @@ footer span {
   }
 
   #about {
-    flex-flow: row wrap;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 15em;
   }
 
   .separator {
