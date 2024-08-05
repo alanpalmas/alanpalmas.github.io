@@ -111,6 +111,7 @@ font-family: 'Fira Sans', sans-serif;
 header {
   padding: 1rem 2rem;
   border-bottom: 1px solid rgb(38, 50, 67);
+  background-color: #272727;
 }
 
 nav {
@@ -454,9 +455,9 @@ main {
 .other-projects-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 3.5rem;
+  gap: 3.5em;
   padding-bottom: 10rem;
 }
 
@@ -750,9 +751,8 @@ footer span {
   }
 
   .featured-projects-box {
-    flex-flow: row wrap;
     justify-content: start;
-    gap: 4rem;
+    gap: 6em;
   }
 
   .project {
@@ -850,7 +850,7 @@ footer span {
   .project-details-box {
     position: relative;
     margin-top: 2.5rem;
-    padding: 0;
+    padding: 80;
     max-width: 50%;
   }
 
