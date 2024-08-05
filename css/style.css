@@ -427,15 +427,15 @@ main {
   margin-top: 3.5rem;
   padding: 0.3rem;
   border-radius: 1.8rem;
-  background: linear-gradient(
+  /* background: linear-gradient(
     99.41deg,
     #002cc7 -39.51%,
     rgba(24, 185, 207, 0.9) 116.85%
-  );
+  ); */
 }
 
 .img-box::before {
-  content: "";
+  /* content: ""; */
   position: absolute;
   left: 0;
   top: 0;
