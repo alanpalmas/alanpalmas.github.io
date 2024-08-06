@@ -15,11 +15,11 @@
             </a>
             <h2>QA Manual - Quality Control - QA Automation - QA Lead </h2>
             <ul class="nav-menu">
-                <li class="nav-link"><a href="#" id="language-toggle">English</a></li>
                 <li class="nav-link"><a href="#about">Sobre mí</a></li>
                 <li class="nav-link"><a href="#projects">Proyectos</a></li>
                 <li class="nav-link"><a href="#contact">Contacto</a></li>
                 <li class="nav-link"><a href="https://drive.google.com/file/d/1VQ6FL39h-WNUbsMWjDt20IJOtynwyW1A/view?usp=sharing" target="_blank">CV</a></li>
+                <li class="nav-link"><a href="#" id="language-toggle">English</a></li>
                 <li class="nav-social-links social-links">
                     <a href="https://github.com/alanpalmas" target="_blank" class="social github">
                         <img src="img/github.svg" alt="GitHub Icon">
@@ -40,7 +40,7 @@
             <span class="salutation">¡Hola!</span>
             <h1>Mi nombre es <span class="name-highlight">Alan Palmas</span>.</h1>
             <p class="declaration">Software QA Engineer apasionado por la calidad del software</p>
-            <p>Como Software QA Engineer, mi misión es asegurar que los productos de software cumplan con los más altos estándares de calidad. Cuento con conocimientos en QA/QC, Web Testing, API Testing y Mobile Testing, tanto manual como con herramientas de automatización de pruebas, esto me permite detectar y prevenir defectos de manera eficiente.</p>
+            <p id="introduction">Como Software QA Engineer, mi misión es asegurar que los productos de software cumplan con los más altos estándares de calidad. Cuento con conocimientos en QA/QC, Web Testing, API Testing y Mobile Testing, tanto manual como con herramientas de automatización de pruebas, esto me permite detectar y prevenir defectos de manera eficiente.</p>
             <div class="cta-box">
                 <a href="#contact" class="cta cta1">Contacto</a>
                 <a href="https://drive.google.com/file/d/1VQ6FL39h-WNUbsMWjDt20IJOtynwyW1A/view" target="_blank" class="cta cta2">CV</a>
@@ -62,8 +62,7 @@
             <div class="separator">
                 <h2>Sobre mí</h2>
             </div>
-            <p class="about-text">
-                <br /><br /> 
+            <p class="about-text" id="about-text">
                 Soy <span>Software QA Engineer</span> dedicado y orientado al detalle, con una trayectoria comprobada en asegurar los más altos estándares de calidad en el desarrollo de software. Mi camino en el campo de QA comenzó como tester freelance, donde perfeccioné mis habilidades y desarrollé un agudo sentido del detalle.
                 <br /><br /> 
                 Mi primera experiencia formal fue en <span>Fpay</span>, donde colaboré con un excelente equipo de desarrollo para realizar tareas de QA. Este rol me permitió sumergirme en las complejidades del aseguramiento de calidad, trabajando estrechamente con los desarrolladores para identificar y resolver problemas, y asegurando la funcionalidad sin inconvenientes de nuestros productos.
@@ -126,9 +125,9 @@
             <div class="project project1">
                 <div class="project-details-box">
                     <div class="project-main-info">
-                        <span>Proyecto #1 - Urban Routes</span>
-                        <h3>Web Testing</h3>
-                        <p>Este proyecto de QA para el sitio web de Urban Routes involucró: validación de diseños contra especificaciones de Figma, creación de casos de prueba, ejecución de pruebas manuales de UI, usuario final y nuevas funcionalidades. Identifiqué y reporté más de 50 bugs en Jira.</p>
+                        <span class="project-title">Proyecto #1 - Urban Routes</span>
+                        <h3 class="project-subtitle">Web Testing</h3>
+                        <p class="project-description">Este proyecto de QA para el sitio web de Urban Routes involucró: validación de diseños contra especificaciones de Figma, creación de casos de prueba, ejecución de pruebas manuales de UI, usuario final y nuevas funcionalidades. Identifiqué y reporté más de 50 bugs en Jira.</p>
                     </div>
                     <div class="project-tools">
                         <p>JavaScript, Devtools, JIRA</p>
@@ -143,9 +142,9 @@
             <div class="project project2">
                 <div class="project-details-box">
                     <div class="project-main-info">
-                        <span>Proyecto #2 - ABM Concesionaria</span>
-                        <h3>Desarrollo de Software</h3>
-                        <p>Este proyecto se centró en el desarrollo de una aplicación de gestión para una concesionaria de automóviles. Utilizando el lenguaje C#, se diseñó la interfaz y se desarrolló la aplicación en Visual Studio con Windows Forms, y se creó una base de datos robusta con SQL Server. El sistema permite el alta, baja y modificación de vehículos, filtrado entre vehiculos usados, 0km, autos, camioneas, 4x4, hatchback, sedan, marcas entre otros datos, asegurando una gestión eficiente y segura de la información.</p>
+                        <span class="project-title">Proyecto #2 - ABM Concesionaria</span>
+                        <h3 class="project-subtitle">Desarrollo de Software</h3>
+                        <p class="project-description">Este proyecto se centró en el desarrollo de una aplicación de gestión para una concesionaria de automóviles. Utilizando el lenguaje C#, se diseñó la interfaz y se desarrolló la aplicación en Visual Studio con Windows Forms, y se creó una base de datos robusta con SQL Server. El sistema permite el alta, baja y modificación de vehículos, filtrado entre vehiculos usados, 0km, autos, camioneas, 4x4, hatchback, sedan, marcas entre otros datos, asegurando una gestión eficiente y segura de la información.</p>
                     </div>
                     <div class="project-tools">
                         <p>C#, SQL Server, Visual Studio, Windows Forms, UX, UI</p>
@@ -160,9 +159,9 @@
             <div class="project project3">
                 <div class="project-details-box">
                     <div class="project-main-info">
-                        <span>Proyecto #3 - Api Test</span>
-                        <h3>Pruebas Api</h3>
-                        <p>En este proyecto realicé pruebas de API para una aplicación de comercio electrónico llamada "Urban Grocers", enfocándome en asegurar la calidad y funcionalidad de los endpoints clave utilizados para la gestión de usuarios, productos y pedidos. Utilicé herramientas avanzadas y enfoques metodológicos para llevar a cabo pruebas exhaustivas que garantizan un rendimiento óptimo y una integración perfecta.</p>
+                        <span class="project-title">Proyecto #3 - Api Test</span>
+                        <h3 class="project-subtitle">Pruebas Api</h3>
+                        <p class="project-description">En este proyecto realicé pruebas de API para una aplicación de comercio electrónico llamada "Urban Grocers", enfocándome en asegurar la calidad y funcionalidad de los endpoints clave utilizados para la gestión de usuarios, productos y pedidos. Utilicé herramientas avanzadas y enfoques metodológicos para llevar a cabo pruebas exhaustivas que garantizan un rendimiento óptimo y una integración perfecta.</p>
                     </div>
                     <div class="project-tools">
                         <p>Posttman, Jira, Zephyr, Jenkins, DevTools</p>
@@ -177,9 +176,9 @@
             <div class="project project4">
                 <div class="project-details-box">
                     <div class="project-main-info">
-                        <span>Proyecto #4 - Automatizacion de login</span>
-                        <h3>Automatizacion con Selenium y Python</h3>
-                        <p>En este proyecto Automaticé el proceso de inicio de sesión en una aplicación web utilizando Selenium, Python y Pytest. El objetivo del proyecto fue asegurar que la funcionalidad de inicio de sesión opere correctamente bajo diferentes escenarios, incluyendo credenciales válidas e inválidas, y la gestión de mensajes de error.</p>
+                        <span class="project-title">Proyecto #4 - Automatizacion de login</span>
+                        <h3 class="project-subtitle">Automatizacion con Selenium y Python</h3>
+                        <p class="project-description">En este proyecto Automaticé el proceso de inicio de sesión en una aplicación web utilizando Selenium, Python y Pytest. El objetivo del proyecto fue asegurar que la funcionalidad de inicio de sesión opere correctamente bajo diferentes escenarios, incluyendo credenciales válidas e inválidas, y la gestión de mensajes de error.</p>
                     </div>
                     <div class="project-tools">
                         <p>Selenuium WebDriver, Python, Pytest, Chrome WebDriver, PyCharm</p>
@@ -194,9 +193,9 @@
             <div class="project project5">
                 <div class="project-details-box">
                     <div class="project-main-info">
-                        <span>Proyecto #4 - Compra de entradas de cine</span>
-                        <h3>Desarrollo de aplicacion de escritorio</h3>
-                        <p>En este proyecto desarrollé una aplicación de escritorio en C# utilizando Visual Studio para simular el proceso completo de compra de entradas de cine, como trabajo para una materia de la carrera que estoy cursando. La aplicación consta de varios formularios que guían al usuario a través de cada paso del proceso: desde la selección de la película y la elección de la fecha y hora, hasta la selección de asientos y la gestión del pago.</p>
+                        <span class="project-title">Proyecto #4 - Compra de entradas de cine</span>
+                        <h3 class="project-subtitle">Desarrollo de aplicacion de escritorio</h3>
+                        <p class="project-description">En este proyecto desarrollé una aplicación de escritorio en C# utilizando Visual Studio para simular el proceso completo de compra de entradas de cine, como trabajo para una materia de la carrera que estoy cursando. La aplicación consta de varios formularios que guían al usuario a través de cada paso del proceso: desde la selección de la película y la elección de la fecha y hora, hasta la selección de asientos y la gestión del pago.</p>
                     </div>
                     <div class="project-tools">
                         <p>C#, Visual Studio, .NET, Windows Form, Diseño, UX, UI</p>
@@ -215,7 +214,7 @@
         <div>
             <span>¿Te interesó mi perfil?</span>
             <h4>¡No dudes en contactarme!</h4>
-            <p>Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboracion.</p>
+            <p id="contact-description">Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboracion.</p>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alanrpalmas@gmail.com&su=Contacto desde tu Portafolio&body=Hola Alan," class="cta cta2">Enviame un correo</a>
         </div>
         <aside class="contact-social-links social-links">
