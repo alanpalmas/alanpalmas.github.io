@@ -68,6 +68,7 @@ const translations = {
         contactHeading: "Don't hesitate to contact me!",
         contactDescription: "Send me an email or a WhatsApp message and I will be happy to answer your questions, discuss job opportunities or collaborations.",
         contactButton: "Send me an email",
+        ctaContact: "Contact",
         languageToggle: "Español",
         nav: {
             about: "About Me",
@@ -103,7 +104,7 @@ const translations = {
             Fuera de mi rutina laboral me capacito constantemente en diferentes tecnologias que suman a mi rol y dedico tiempo a lo mas importante que tengo que es mi familia.
             <br /><br />
             Estas son algunas herramientas y tecnologías con las que estoy familiarizado y con las que también he estado trabajando.`,
-        projects: "Algunos Proyectos",
+        projects: "Proyectos",
         project1: {
             title: "Proyecto #1 - Urban Routes",
             subtitle: "Web Testing",
@@ -133,6 +134,7 @@ const translations = {
         contactHeading: "¡No dudes en contactarme!",
         contactDescription: "Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboración.",
         contactButton: "Envíame un correo",
+        ctaContact: "Contacto",
         languageToggle: "English",
         nav: {
             about: "Sobre mí",
@@ -184,6 +186,8 @@ function updateLanguage() {
     document.getElementById("contact-heading").textContent = translations[currentLanguage].contactHeading;
     document.getElementById("contact-description").textContent = translations[currentLanguage].contactDescription;
     document.getElementById("contact-button").textContent = translations[currentLanguage].contactButton;
+
+    document.getElementById("cta-contact").textContent = translations[currentLanguage].ctaContact;
 
     document.getElementById("nav-about").textContent = translations[currentLanguage].nav.about;
     document.getElementById("nav-projects").textContent = translations[currentLanguage].nav.projects;
