@@ -9,6 +9,7 @@ function showMenu(){
     menuBar.classList.toggle('is-active');
     menuList.classList.toggle('is-active');
 }
+
 const translations = {
     en: {
         salutation: "Hello!",
@@ -55,3 +56,4 @@ function updateLanguage() {
 }
 
 updateLanguage();
+
