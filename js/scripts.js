@@ -16,10 +16,8 @@ const translations = {
         declaration: "Software QA Engineer passionate about software quality",
         about: "About Me",
         projects: "Projects",
-        contact: "Contact",
-        cv: "My CV",
         contactHeading: "Contact Me",
-        contactDescription: "Send me an email or a WhatsApp message, and I will be happy to answer your questions, discuss job opportunities or collaboration.",
+        contactDescription: "Send me an email and I will be happy to answer your questions or discuss job opportunities and collaboration.",
         contactButton: "Send me an email",
         languageToggle: "Español"
     },
@@ -29,10 +27,8 @@ const translations = {
         declaration: "Software QA Engineer apasionado por la calidad del software",
         about: "Sobre mí",
         projects: "Proyectos",
-        contact: "Contacto",
-        cv: "Mi CV",
         contactHeading: "¡No dudes en contactarme!",
-        contactDescription: "Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboración.",
+        contactDescription: "Envíame un correo electrónico y estaré encantado de responder a tus preguntas o discutir oportunidades laborales y de colaboración.",
         contactButton: "Envíame un correo",
         languageToggle: "English"
     }
@@ -50,10 +46,8 @@ function updateLanguage() {
     document.querySelector(".salutation").textContent = translations[currentLanguage].salutation;
     document.querySelector("h1").innerHTML = translations[currentLanguage].name;
     document.querySelector(".declaration").textContent = translations[currentLanguage].declaration;
-    document.querySelector(".nav-menu .nav-link a[href='#about']").textContent = translations[currentLanguage].about;
-    document.querySelector(".nav-menu .nav-link a[href='#projects']").textContent = translations[currentLanguage].projects;
-    document.querySelector(".nav-menu .nav-link a[href='#contact']").textContent = translations[currentLanguage].contact;
-    document.querySelector(".nav-menu .nav-link a[href*='drive.google.com']").textContent = translations[currentLanguage].cv;
+    document.querySelector("#about .separator h2").textContent = translations[currentLanguage].about;
+    document.querySelector("#projects .separator h2").textContent = translations[currentLanguage].projects;
     document.querySelector("#contact h4").textContent = translations[currentLanguage].contactHeading;
     document.querySelector("#contact p").textContent = translations[currentLanguage].contactDescription;
     document.querySelector("#contact .cta2").textContent = translations[currentLanguage].contactButton;
