@@ -74,7 +74,7 @@ const translations = {
             about: "About Me",
             projects: "Projects",
             contact: "Contact",
-            cv: "CV"
+            cv: "Resume"
         }
     },
     es: {
