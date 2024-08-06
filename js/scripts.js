@@ -38,7 +38,7 @@ const translations = {
             Outside of my work routine, I constantly train in different technologies that add to my role and dedicate time to the most important thing I have, which is my family.
             <br /><br />
             These are some tools and technologies I am familiar with and have also been working with.`,
-        projects: "Projects",
+        projects: "Some Projects",
         project1: {
             title: "Project #1 - Urban Routes",
             subtitle: "Web Testing",
@@ -64,10 +64,17 @@ const translations = {
             subtitle: "Desktop Application Development",
             description: "In this project, I developed a desktop application in C# using Visual Studio to simulate the complete process of buying movie tickets as a work for a subject in the degree I am pursuing. The application consists of several forms that guide the user through each step of the process: from selecting the movie and choosing the date and time to selecting seats and managing payment."
         },
-        contactHeading: "Contact Me",
+        contactTitle: "Interested in my profile?",
+        contactHeading: "Don't hesitate to contact me!",
         contactDescription: "Send me an email or a WhatsApp message and I will be happy to answer your questions, discuss job opportunities or collaborations.",
         contactButton: "Send me an email",
-        languageToggle: "Español"
+        languageToggle: "Español",
+        nav: {
+            about: "About Me",
+            projects: "Projects",
+            contact: "Contact",
+            cv: "CV"
+        }
     },
     es: {
         salutation: "¡Hola!",
@@ -96,7 +103,7 @@ const translations = {
             Fuera de mi rutina laboral me capacito constantemente en diferentes tecnologias que suman a mi rol y dedico tiempo a lo mas importante que tengo que es mi familia.
             <br /><br />
             Estas son algunas herramientas y tecnologías con las que estoy familiarizado y con las que también he estado trabajando.`,
-        projects: "Proyectos",
+        projects: "Algunos Proyectos",
         project1: {
             title: "Proyecto #1 - Urban Routes",
             subtitle: "Web Testing",
@@ -122,10 +129,17 @@ const translations = {
             subtitle: "Desarrollo de aplicacion de escritorio",
             description: "En este proyecto desarrollé una aplicación de escritorio en C# utilizando Visual Studio para simular el proceso completo de compra de entradas de cine, como trabajo para una materia de la carrera que estoy cursando. La aplicación consta de varios formularios que guían al usuario a través de cada paso del proceso: desde la selección de la película y la elección de la fecha y hora, hasta la selección de asientos y la gestión del pago."
         },
+        contactTitle: "¿Te interesó mi perfil?",
         contactHeading: "¡No dudes en contactarme!",
         contactDescription: "Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboración.",
         contactButton: "Envíame un correo",
-        languageToggle: "English"
+        languageToggle: "English",
+        nav: {
+            about: "Sobre mí",
+            projects: "Proyectos",
+            contact: "Contacto",
+            cv: "Mi CV"
+        }
     }
 };
 
@@ -138,31 +152,44 @@ languageToggleBtn.addEventListener("click", () => {
 });
 
 function updateLanguage() {
-    document.querySelector(".salutation").textContent = translations[currentLanguage].salutation;
-    document.querySelector("h1").innerHTML = translations[currentLanguage].name;
-    document.querySelector(".declaration").textContent = translations[currentLanguage].declaration;
-    document.querySelector("#introduction").textContent = translations[currentLanguage].introduction;
-    document.querySelector("#about .separator h2").textContent = translations[currentLanguage].about;
-    document.querySelector("#about-text").innerHTML = translations[currentLanguage].aboutText;
-    document.querySelector("#projects .separator h2").textContent = translations[currentLanguage].projects;
-    document.querySelector(".project1 .project-title").textContent = translations[currentLanguage].project1.title;
-    document.querySelector(".project1 .project-subtitle").textContent = translations[currentLanguage].project1.subtitle;
-    document.querySelector(".project1 .project-description").textContent = translations[currentLanguage].project1.description;
-    document.querySelector(".project2 .project-title").textContent = translations[currentLanguage].project2.title;
-    document.querySelector(".project2 .project-subtitle").textContent = translations[currentLanguage].project2.subtitle;
-    document.querySelector(".project2 .project-description").textContent = translations[currentLanguage].project2.description;
-    document.querySelector(".project3 .project-title").textContent = translations[currentLanguage].project3.title;
-    document.querySelector(".project3 .project-subtitle").textContent = translations[currentLanguage].project3.subtitle;
-    document.querySelector(".project3 .project-description").textContent = translations[currentLanguage].project3.description;
-    document.querySelector(".project4 .project-title").textContent = translations[currentLanguage].project4.title;
-    document.querySelector(".project4 .project-subtitle").textContent = translations[currentLanguage].project4.subtitle;
-    document.querySelector(".project4 .project-description").textContent = translations[currentLanguage].project4.description;
-    document.querySelector(".project5 .project-title").textContent = translations[currentLanguage].project5.title;
-    document.querySelector(".project5 .project-subtitle").textContent = translations[currentLanguage].project5.subtitle;
-    document.querySelector(".project5 .project-description").textContent = translations[currentLanguage].project5.description;
-    document.querySelector("#contact h4").textContent = translations[currentLanguage].contactHeading;
-    document.querySelector("#contact-description").textContent = translations[currentLanguage].contactDescription;
-    document.querySelector("#contact .cta2").textContent = translations[currentLanguage].contactButton;
+    document.getElementById("salutation").textContent = translations[currentLanguage].salutation;
+    document.getElementById("name").innerHTML = translations[currentLanguage].name;
+    document.getElementById("declaration").textContent = translations[currentLanguage].declaration;
+    document.getElementById("introduction").textContent = translations[currentLanguage].introduction;
+    document.getElementById("about-title").textContent = translations[currentLanguage].about;
+    document.getElementById("about-text").innerHTML = translations[currentLanguage].aboutText;
+    document.getElementById("projects-title").textContent = translations[currentLanguage].projects;
+
+    document.getElementById("project1-title").textContent = translations[currentLanguage].project1.title;
+    document.getElementById("project1-subtitle").textContent = translations[currentLanguage].project1.subtitle;
+    document.getElementById("project1-description").textContent = translations[currentLanguage].project1.description;
+
+    document.getElementById("project2-title").textContent = translations[currentLanguage].project2.title;
+    document.getElementById("project2-subtitle").textContent = translations[currentLanguage].project2.subtitle;
+    document.getElementById("project2-description").textContent = translations[currentLanguage].project2.description;
+
+    document.getElementById("project3-title").textContent = translations[currentLanguage].project3.title;
+    document.getElementById("project3-subtitle").textContent = translations[currentLanguage].project3.subtitle;
+    document.getElementById("project3-description").textContent = translations[currentLanguage].project3.description;
+
+    document.getElementById("project4-title").textContent = translations[currentLanguage].project4.title;
+    document.getElementById("project4-subtitle").textContent = translations[currentLanguage].project4.subtitle;
+    document.getElementById("project4-description").textContent = translations[currentLanguage].project4.description;
+
+    document.getElementById("project5-title").textContent = translations[currentLanguage].project5.title;
+    document.getElementById("project5-subtitle").textContent = translations[currentLanguage].project5.subtitle;
+    document.getElementById("project5-description").textContent = translations[currentLanguage].project5.description;
+
+    document.getElementById("contact-title").textContent = translations[currentLanguage].contactTitle;
+    document.getElementById("contact-heading").textContent = translations[currentLanguage].contactHeading;
+    document.getElementById("contact-description").textContent = translations[currentLanguage].contactDescription;
+    document.getElementById("contact-button").textContent = translations[currentLanguage].contactButton;
+
+    document.getElementById("nav-about").textContent = translations[currentLanguage].nav.about;
+    document.getElementById("nav-projects").textContent = translations[currentLanguage].nav.projects;
+    document.getElementById("nav-contact").textContent = translations[currentLanguage].nav.contact;
+    document.getElementById("nav-cv").textContent = translations[currentLanguage].nav.cv;
+
     languageToggleBtn.textContent = translations[currentLanguage].languageToggle;
 }
 
