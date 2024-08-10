@@ -158,6 +158,17 @@ nav img {
   margin: 0;
 }
 
+.scroll-top{
+  position: fixed;
+  bottom: 2rem;
+  right: -85rem;
+  z-index: 2;
+}
+
+.scroll-top img{
+  width: 3em;
+}
+
 /**************************
 /* HAMBURGER, MENU-BAR STYLING 
 **************************/
