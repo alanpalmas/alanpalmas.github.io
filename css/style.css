@@ -6,6 +6,8 @@
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Clear fix hack */
@@ -42,13 +44,6 @@ body {
   font-weight: 300;
   line-height: 1.5;
   color: rgb(204, 213, 243);
-}
-
-header,
-main,
-main ~ section,
-footer {
-  padding: 2rem;
 }
 
 h1,
@@ -109,29 +104,39 @@ font-family: 'Fira Sans', sans-serif;
 /*******************************************/
 /* HEADER AND NAV STYLING */
 header {
-  padding: 1rem 2rem;
   border-bottom: 1px solid rgb(38, 50, 67);
   background-color: #272727;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 4;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 9em;
+  width: 100vw;
 }
 
 nav img {
-  width: 55px;
+  width: 50px;
   z-index: 2;
+}
+
+.logo-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav-menu {
   position: fixed;
-  display: flex;
-  top: -2rem;
   right: -200vh;
-  height: 100vh;
-  width: 75vw;
+  height: 70vh;
+  width: 50vw;
 
   list-style: none;
   padding: 0;
@@ -151,8 +156,6 @@ nav img {
   top: 0;
   right: 0;
   margin: 0;
-
-  box-shadow: 0 1rem 5rem 0 rgba(0, 0, 0, 0.3);
 }
 
 /**************************
@@ -167,6 +170,7 @@ nav img {
   outline: none;
   background: none;
   cursor: pointer;
+
   z-index: 2;
 }
 
@@ -174,12 +178,12 @@ nav img {
   position: fixed;
   top: 2.3rem;
   right: 2rem;
-  background: rgb(31, 38, 49);
 }
 
 .menu-bar {
   position: relative;
   width: 100%;
+  z-index: 6;
 }
 
 .menu-bar,
@@ -703,10 +707,6 @@ footer span {
     font-size: 1.55rem;
   }
 
-  header {
-    width: 100%;
-  }
-
   .nav-social-links {
     display: none;
   }
@@ -801,6 +801,15 @@ footer span {
 @media screen and (min-width: 1024px) {
   body > * {
     width: 85vw;
+  }
+
+  nav{
+    justify-content: space-around;
+  }
+
+  .nav-menu.is-active{
+    width: 70vw;
+    height: 90vh;
   }
 
   header {
@@ -971,13 +980,13 @@ footer span {
     width: 70vw;
   }
 
-  header {
-    width: 100%;
-    padding: 2rem 5.5rem;
+  nav{
+    justify-content: flex-start;
+    gap: 13em;
   }
 
-  nav {
-    justify-content: space-between;
+  header {
+    width: 100%;
   }
 
   nav > a {
@@ -1025,6 +1034,11 @@ footer span {
     font-size: 1.6rem;
   }
 
+  nav{
+    justify-content: center;
+    gap: 9em;
+  }
+
   body > * {
     width: 103rem;
   }
@@ -1057,6 +1071,13 @@ footer span {
 
   .cta2 {
     width: fit-content;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .nav-menu.is-active{
+    width: 100vw;
+    height: 100vh;
   }
 }
 
