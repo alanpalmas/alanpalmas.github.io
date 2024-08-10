@@ -803,6 +803,10 @@ footer span {
     width: 85vw;
   }
 
+  nav{
+    justify-content: space-around;
+  }
+
   .nav-menu.is-active{
     width: 70vw;
     height: 90vh;
