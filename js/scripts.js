@@ -1,6 +1,15 @@
 const menuBtn = document.querySelector('.hamburger');
 const menuBar = document.querySelector('.menu-bar');
 const menuList = document.querySelector('.nav-menu');
+const scrollTopBtn = document.querySelector('.scroll-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        scrollTopBtn.classList.add('show-scroll-top');
+    } else {
+        scrollTopBtn.classList.remove('show-scroll-top');
+    }
+})
 
 menuBtn.addEventListener('click', showMenu);
 
