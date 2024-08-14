@@ -163,6 +163,12 @@ nav img {
   bottom: 2rem;
   right: -85rem;
   z-index: 2;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.show-scroll-top{
+  display: block;
 }
 
 .scroll-top img{
@@ -877,7 +883,6 @@ footer span {
   .project-details-box {
     position: relative;
     margin-top: 2.5rem;
-    padding: 80;
     max-width: 50%;
   }
 
