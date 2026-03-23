@@ -593,6 +593,7 @@ body.cursor-hover .cursor-ring {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: start;
 }
 
 .skill-cat {
@@ -608,7 +609,6 @@ body.cursor-hover .cursor-ring {
 }
 
 .skill-cat--featured {
-  grid-column: span 2;
   border-color: var(--border-accent);
   background: rgba(0, 179, 255, 0.03);
 }
@@ -852,6 +852,11 @@ body.cursor-hover .cursor-ring {
   transition: border-color var(--t), transform var(--t-slow) var(--ease-spring),
               box-shadow var(--t-slow);
   display: flex; flex-direction: column;
+  height: 100%;
+}
+
+.proj-card--centered {
+  grid-column: 2;
 }
 .proj-card:hover {
   border-color: var(--border-accent);
@@ -1105,9 +1110,9 @@ body.cursor-hover .cursor-ring {
 @media (max-width: 1024px) {
   :root { --section-py: 6rem; }
 
-  .skills-grid         { grid-template-columns: repeat(2, 1fr); }
-  .skill-cat--featured { grid-column: span 2; }
-  .projects-grid       { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid          { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid        { grid-template-columns: repeat(2, 1fr); }
+  .proj-card--centered  { grid-column: auto; }
   .about-grid          { grid-template-columns: 1fr; gap: 3rem; }
   .about-stats-col     { grid-template-columns: repeat(4, 1fr); }
 }
