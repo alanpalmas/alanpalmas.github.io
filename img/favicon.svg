@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1a4a8a"/>
+      <stop offset="55%"  stop-color="#0090d4"/>
+      <stop offset="100%" stop-color="#00c8ff"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect width="64" height="64" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Dark background with rounded corners -->
+  <rect width="64" height="64" rx="12" fill="#08111f"/>
+
+  <!-- AP lettermark -->
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="central"
+    text-anchor="middle"
+    font-family="'Space Grotesk', 'Inter', Arial, sans-serif"
+    font-size="28"
+    font-weight="800"
+    letter-spacing="-1"
+    fill="url(#g)"
+  >AP</text>
+</svg>

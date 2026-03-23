@@ -177,15 +177,44 @@ body.cursor-hover .cursor-ring {
 }
 
 .nav-logo {
-  display: flex; align-items: center; gap: 0.6rem;
+  display: flex; align-items: center; gap: 0.5rem;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
-  color: var(--text-1);
-  transition: color var(--t);
+  flex-shrink: 0;
+  transition: opacity var(--t);
 }
-.nav-logo img { border-radius: 6px; }
-.nav-logo strong { color: var(--accent); }
-.nav-logo:hover { color: var(--accent); }
+.nav-logo:hover { opacity: 0.8; }
+
+/* ── AP monogram — gradient lettermark, no background ── */
+.nav-logo-mark {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  user-select: none;
+  flex-shrink: 0;
+  /* Extra padding so the P stroke is never clipped by background-clip */
+  padding-right: 0.15em;
+  background: linear-gradient(180deg, #1a4a8a 0%, #0090d4 55%, #00c8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.mark-a, .mark-p { display: inline; }
+
+/* ── Name text ── */
+.nav-logo-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--t);
+  letter-spacing: 0.01em;
+}
+.nav-logo-name strong {
+  color: rgba(255,255,255,0.92);
+  font-weight: 700;
+}
 
 .nav-links {
   display: flex; align-items: center; gap: 0.25rem;
@@ -1087,8 +1116,9 @@ body.cursor-hover .cursor-ring {
   :root { --section-py: 4.5rem; }
 
   /* Navbar */
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .nav-links        { display: none; }
+  .hamburger        { display: flex; }
+  .nav-logo-name    { display: none; }
 
   /* Hero */
   .hero-content     { padding: 2rem 1.25rem; }
