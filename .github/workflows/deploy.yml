@@ -6,20 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,23 +33,21 @@ jobs:
           cp cv.html dist/cv.html
           cp cv-es.html dist/cv-es.html
           cp -r pdf dist/pdf
+          touch dist/.nojekyll
 
       - name: Verify critical assets
         run: |
-          test -d dist/img  || (echo "ERROR: dist/img missing" && exit 1)
-          test -f dist/cv.html || (echo "ERROR: dist/cv.html missing" && exit 1)
+          test -d dist/img        || (echo "ERROR: dist/img missing" && exit 1)
+          test -f dist/cv.html    || (echo "ERROR: dist/cv.html missing" && exit 1)
           test -f dist/cv-es.html || (echo "ERROR: dist/cv-es.html missing" && exit 1)
-          test -d dist/pdf  || (echo "ERROR: dist/pdf missing" && exit 1)
+          test -d dist/pdf        || (echo "ERROR: dist/pdf missing" && exit 1)
+          test -f dist/assets/index*.js  || (echo "ERROR: dist/assets JS missing" && exit 1)
+          test -f dist/assets/index*.css || (echo "ERROR: dist/assets CSS missing" && exit 1)
           echo "All critical assets present."
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: dist
+          branch: gh-pages
+          clean: true
