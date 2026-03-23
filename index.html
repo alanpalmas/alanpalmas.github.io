@@ -1,245 +1,585 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alan Palmas - Software QA Engineer</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="/img/qa-logo.png"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alan Palmas – Senior Software QA Engineer con +5 años en FinTech y Banca. Automatización, API Testing, AI-powered QA Tools. Galileo Financial Technologies · SoFi Technologies." />
+  <meta name="keywords" content="QA Engineer, Software Testing, Test Automation, FinTech, Selenium, Appium, Postman, JIRA, Zephyr, Python, Galileo, SoFi, Buenos Aires" />
+  <meta property="og:title" content="Alan Palmas – Senior Software QA Engineer" />
+  <meta property="og:description" content="Portfolio de Alan Palmas. Senior QA Engineer especializado en FinTech y Banca. 5+ años de experiencia, AI Tools, automatización." />
+  <meta property="og:url" content="https://alanpalmas.github.io" />
+  <meta property="og:type" content="website" />
+  <title>Alan Palmas – Senior QA Engineer | FinTech & Banking</title>
+  <link rel="icon" type="image/png" href="/img/qa-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <a href="#" class="scroll-top" id="scroll-top">
-        <img src="img/flecha.png" alt="Arrow Up Icon">
-    </a>
-    <header>
-        <nav>
-            <div class="logo-container">
-                <a href="/">
-                    <img src="img/qa-logo.png" alt="Logo" class="logo">
-                </a>
-                <p>QA Manual - Quality Control - QA Automation - QA Lead </p>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-link"><a href="#about" id="nav-about">Sobre mí</a></li>
-                <li class="nav-link"><a href="#projects" id="nav-projects">Proyectos</a></li>
-                <li class="nav-link"><a href="#contact" id="nav-contact">Contacto</a></li>
-                <li class="nav-link"><a href="https://drive.google.com/file/d/1aTeoFVhmwIhDuZ4vWPByQXFGo3JA7_Yc/view?usp=sharing" target="_blank" id="nav-cv">CV</a></li>
-                <li class="nav-link"><a href="#" id="language-toggle">English</a></li>
-                <li class="nav-social-links social-links">
-                    <a href="https://github.com/alanpalmas" target="_blank" class="social github">
-                        <img src="img/github.svg" alt="GitHub Icon">
-                    </a>
-                    <a href="https://www.linkedin.com/in/alanpalmas/" target="_blank" class="social linkedin">
-                        <img src="img/in.svg" alt="LinkedIn Icon">
-                    </a>
-                </li>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-logo magnetic">
+        <img src="/img/qa-logo.png" alt="Alan Palmas" width="36" height="36" />
+        <span>Alan<strong>Palmas</strong></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about"      class="nav-link" data-es="Sobre mí"    data-en="About">Sobre mí</a></li>
+        <li><a href="#skills"     class="nav-link" data-es="Skills"      data-en="Skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+        <li><a href="#projects"   class="nav-link" data-es="Proyectos"   data-en="Projects">Proyectos</a></li>
+        <li><a href="#contact"    class="nav-link" data-es="Contacto"    data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-btn magnetic" id="lang-toggle" aria-label="Toggle language">EN</button>
+        <a href="/cv.html" target="_blank" class="nav-cv magnetic" data-es="Mi CV" data-en="Resume">Mi CV</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-links">
+      <li><a href="#about"      data-es="Sobre mí"    data-en="About">Sobre mí</a></li>
+      <li><a href="#skills"     data-es="Skills"      data-en="Skills">Skills</a></li>
+      <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+      <li><a href="#projects"   data-es="Proyectos"   data-en="Projects">Proyectos</a></li>
+      <li><a href="#contact"    data-es="Contacto"    data-en="Contact">Contacto</a></li>
+      <li><a href="/cv.html" target="_blank" class="nav-cv-link" data-es="Descargar CV" data-en="Download Resume">Descargar CV</a></li>
+    </ul>
+  </div>
+
+  <!-- ══ HERO ═══════════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-noise"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="hero-tag-pulse"></span>
+        <span data-es="Disponible para trabajo remoto" data-en="Available for remote work">Disponible para trabajo remoto</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-name-line">Alan</span>
+        <span class="hero-name-line hero-name-accent">Palmas</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="hero-role-prefix" data-es="Soy" data-en="I'm">Soy</span>
+        <span class="hero-role-text">Senior QA Engineer</span>
+      </div>
+
+      <p class="hero-description" data-es="5+ años · FinTech & Banca · Automatización · AI QA Tools · Galileo · SoFi Technologies" data-en="5+ years · FinTech & Banking · Automation · AI QA Tools · Galileo · SoFi Technologies">
+        5+ años · FinTech & Banca · Automatización · AI QA Tools · Galileo · SoFi Technologies
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary magnetic" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
+        <a href="#contact"  class="btn btn-ghost magnetic"   data-es="Contacto"      data-en="Contact">Contacto</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span data-es="Scroll" data-en="Scroll">Scroll</span>
+      <div class="hero-scroll-line"><div class="hero-scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+  <section id="about" class="about section">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-es="Sobre mí" data-en="About Me">Sobre mí</span>
+        <h2 class="section-title" data-es="Quién soy" data-en="Who I am">Quién soy</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-col">
+          <p class="about-p" data-es='Soy <strong>Senior Software QA Engineer</strong> con más de 5 años de experiencia en testing manual y automatizado para <strong>productos FinTech y bancarios</strong>. Me especializo en estrategias de prueba end-to-end en plataformas mobile (iOS/Android), web y desktop.' data-en='I am a <strong>Senior Software QA Engineer</strong> with 5+ years of experience in manual and automated testing for <strong>FinTech and banking products</strong>. I specialize in end-to-end test strategies across mobile (iOS/Android), web and desktop platforms.'>
+            Soy <strong>Senior Software QA Engineer</strong> con más de 5 años de experiencia en testing manual y automatizado para <strong>productos FinTech y bancarios</strong>. Me especializo en estrategias de prueba end-to-end en plataformas mobile (iOS/Android), web y desktop.
+          </p>
+          <p class="about-p" data-es='Ingresé a <strong>Technisys</strong>, empresa adquirida por <strong>SoFi Technologies</strong>, que luego creó <strong>Galileo Financial Technologies</strong> como su división latinoamericana. Trabajo para <strong>Galileo</strong> en plataformas bancarias para <strong>Banco Macro, Banco Nación y Banco Patagonia</strong>. Desarrollé herramientas de QA con <strong>Inteligencia Artificial</strong> que redujeron significativamente los ciclos de diseño de pruebas.' data-en='I joined <strong>Technisys</strong>, a company acquired by <strong>SoFi Technologies</strong>, which then created <strong>Galileo Financial Technologies</strong> as its Latin American division. I work for <strong>Galileo</strong> on banking platforms for <strong>Banco Macro, Banco Nación and Banco Patagonia</strong>. I built <strong>AI-powered QA tools</strong> that significantly reduced test design cycle times.'>
+            Ingresé a <strong>Technisys</strong>, empresa adquirida por <strong>SoFi Technologies</strong>, que luego creó <strong>Galileo Financial Technologies</strong> como su división latinoamericana. Trabajo para <strong>Galileo</strong> en plataformas bancarias para <strong>Banco Macro, Banco Nación y Banco Patagonia</strong>. Desarrollé herramientas de QA con <strong>Inteligencia Artificial</strong> que redujeron significativamente los ciclos de diseño de pruebas.
+          </p>
+          <div class="about-badges">
+            <span class="badge-pill" data-es="Téc. Sup. en Software · 2025" data-en="Higher Tech. Degree in Software · 2025">Téc. Sup. en Software · 2025</span>
+            <span class="badge-pill" data-es="Lic. en Tec. Digitales (en curso)" data-en="Bachelor's in Digital Tech (in progress)">Lic. en Tec. Digitales (en curso)</span>
+            <span class="badge-pill">Inglés B2</span>
+          </div>
+        </div>
+
+        <div class="about-stats-col">
+          <div class="stat-card" data-aos>
+            <div class="stat-value"><span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span></div>
+            <div class="stat-label" data-es="Años de experiencia" data-en="Years of experience">Años de experiencia</div>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-value"><span class="stat-num" data-target="15">0</span><span class="stat-suffix">%</span></div>
+            <div class="stat-label" data-es="Reducción de defectos en producción" data-en="Production defect reduction">Reducción de defectos</div>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-value"><span class="stat-num" data-target="7">0</span><span class="stat-suffix">+</span></div>
+            <div class="stat-label" data-es="Proyectos destacados" data-en="Featured projects">Proyectos destacados</div>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-value"><span class="stat-num" data-target="3">0</span><span class="stat-suffix">+</span></div>
+            <div class="stat-label" data-es="Bancos importantes" data-en="Major banks">Bancos importantes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ═════════════════════════════════════════════ -->
+  <section id="skills" class="skills section">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Tech Stack</span>
+        <h2 class="section-title" data-es="Habilidades" data-en="Skills">Habilidades</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-cat">
+          <h3 class="skill-cat-name" data-es="Automatización de Pruebas" data-en="Test Automation">Automatización de Pruebas</h3>
+          <div class="skill-tags">
+            <span class="stag">Selenium WebDriver</span>
+            <span class="stag">Appium</span>
+            <span class="stag">Katalon Studio</span>
+            <span class="stag">Python / Pytest</span>
+            <span class="stag">C#</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h3 class="skill-cat-name">API &amp; Performance</h3>
+          <div class="skill-tags">
+            <span class="stag">Postman</span>
+            <span class="stag">SoapUI</span>
+            <span class="stag">Apache JMeter</span>
+            <span class="stag">REST API Testing</span>
+            <span class="stag">Load &amp; Stress Testing</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h3 class="skill-cat-name" data-es="Gestión de Pruebas" data-en="Test Management">Gestión de Pruebas</h3>
+          <div class="skill-tags">
+            <span class="stag">JIRA</span>
+            <span class="stag">Zephyr</span>
+            <span class="stag">Confluence</span>
+            <span class="stag">Test Planning</span>
+            <span class="stag">RCA</span>
+            <span class="stag">SDLC / STLC</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h3 class="skill-cat-name">CI/CD &amp; DevTools</h3>
+          <div class="skill-tags">
+            <span class="stag">Git / GitHub</span>
+            <span class="stag">GitHub Actions</span>
+            <span class="stag">Jenkins</span>
+            <span class="stag">SQL / PostgreSQL</span>
+            <span class="stag">MongoDB</span>
+            <span class="stag">Android Studio</span>
+          </div>
+        </div>
+
+        <div class="skill-cat skill-cat--featured">
+          <h3 class="skill-cat-name">
+            AI &amp; Internal QA Tools
+            <span class="skill-cat-badge" data-es="Desarrollado en Galileo" data-en="Built at Galileo">Desarrollado en Galileo</span>
+          </h3>
+          <div class="skill-tags">
+            <span class="stag stag--accent">LLM Integration</span>
+            <span class="stag stag--accent">Figma MCP</span>
+            <span class="stag stag--accent">AI Test Generation</span>
+            <span class="stag stag--accent">Multi-format Processing</span>
+            <span class="stag stag--accent">Zephyr Automation</span>
+            <span class="stag stag--accent">Stakeholder Reports</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h3 class="skill-cat-name" data-es="Aprendiendo" data-en="Currently Learning">Aprendiendo</h3>
+          <div class="skill-tags">
+            <span class="stag stag--learning">Kotlin</span>
+            <span class="stag stag--learning">Jetpack Compose</span>
+            <span class="stag stag--learning">Flutter / Dart</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE ═════════════════════════════════════════ -->
+  <section id="experience" class="experience section">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-es="Trayectoria" data-en="Career">Trayectoria</span>
+        <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experiencia</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-track"><div class="timeline-progress"></div></div>
+
+        <!-- Job 1 -->
+        <div class="timeline-item tl-right">
+          <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+          <article class="timeline-card">
+            <header class="tl-card-head">
+              <span class="tl-date" data-es="Ago 2022 – Presente" data-en="Aug 2022 – Present">Ago 2022 – Presente</span>
+              <span class="tl-badge tl-badge--current" data-es="Actual" data-en="Current">Actual</span>
+            </header>
+            <h3 class="tl-role" data-es="Quality Assurance Engineer" data-en="Quality Assurance Engineer">Quality Assurance Engineer</h3>
+            <p class="tl-company">Galileo Financial Technologies · SoFi Technologies <span style="font-weight:400;opacity:0.6;">(ex Technisys)</span></p>
+            <p class="tl-projects" data-es="Banco Macro · Banco Nación · Banco Patagonia" data-en="Banco Macro · Banco Nación · Banco Patagonia">Banco Macro · Banco Nación · Banco Patagonia</p>
+            <ul class="tl-bullets">
+              <li data-es="Testing manual y automatizado para SaaS bancario en Android, iOS y Desktop" data-en="Manual and automated testing for banking SaaS on Android, iOS and Desktop">Testing manual y automatizado para SaaS bancario en Android, iOS y Desktop</li>
+              <li data-es="API testing con Postman y SoapUI sobre endpoints financieros críticos" data-en="API testing with Postman and SoapUI on critical financial endpoints">API testing con Postman y SoapUI sobre endpoints financieros críticos</li>
+              <li class="tl-achievement" data-es="Reducción del 15% en defectos en producción mediante mejoras en cobertura y RCA" data-en="15% reduction in production defects through improved coverage and RCA">Reducción del 15% en defectos en producción</li>
+              <li class="tl-achievement" data-es="Desarrollé plataforma de generación de casos de prueba con IA (Figma MCP, PDF, video, Excel)" data-en="Built AI-powered test case generation platform (Figma MCP, PDF, video, Excel)">Desarrollé plataforma de generación de casos de prueba con IA</li>
+              <li class="tl-achievement" data-es="Desarrollé herramienta automática de análisis de reportes Zephyr" data-en="Built automated Zephyr report analysis tool">Desarrollé herramienta automática de análisis de reportes Zephyr</li>
             </ul>
-            <button class="hamburger" type="button" name="menu button">
-                <div class="menu-bar"></div>
-            </button>
-        </nav>
-    </header>
+          </article>
+        </div>
 
-    <main>
-        <section>
-            <span class="salutation" id="salutation">¡Hola!</span>
-            <h1 id="name">Mi nombre es <span class="name-highlight">Alan Palmas</span>.</h1>
-            <p class="declaration" id="declaration">Software QA Engineer apasionado por la calidad del software</p>
-            <p id="introduction">Como Software QA Engineer, mi misión es asegurar que los productos de software cumplan con los más altos estándares de calidad. Cuento con conocimientos en QA/QC, Web Testing, API Testing y Mobile Testing, tanto manual como con herramientas de automatización de pruebas, esto me permite detectar y prevenir defectos de manera eficiente.</p>
-            <div class="cta-box">
-                <a href="#contact" class="cta cta1" id="cta-contact">Contacto</a>
-                <a href="https://drive.google.com/file/d/1VQ6FL39h-WNUbsMWjDt20IJOtynwyW1A/view" target="_blank" class="cta cta2" id="cta-cv">Mi CV</a>
+        <!-- Job 2 -->
+        <div class="timeline-item tl-left">
+          <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+          <article class="timeline-card">
+            <header class="tl-card-head">
+              <span class="tl-date" data-es="Ene 2021 – Ago 2022" data-en="Jan 2021 – Aug 2022">Ene 2021 – Ago 2022</span>
+            </header>
+            <h3 class="tl-role" data-es="Quality Assurance Analyst" data-en="Quality Assurance Analyst">Quality Assurance Analyst</h3>
+            <p class="tl-company">Find The Lead</p>
+            <p class="tl-projects">iFX Network</p>
+            <ul class="tl-bullets">
+              <li data-es="Análisis de requerimientos y diseño de casos de prueba para SaaS" data-en="Requirements analysis and test case design for SaaS products">Análisis de requerimientos y diseño de casos de prueba para SaaS</li>
+              <li data-es="Testing funcional, exploratorio y de stress en Android, iOS y Desktop" data-en="Functional, exploratory and stress testing on Android, iOS and Desktop">Testing funcional, exploratorio y de stress en Android, iOS y Desktop</li>
+              <li class="tl-achievement" data-es="Reducción del tiempo de respuesta ante bugs críticos mediante optimización del triage" data-en="Reduced critical bug response time through triage process optimization">Reducción del tiempo de respuesta ante bugs críticos</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item tl-right">
+          <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+          <article class="timeline-card">
+            <header class="tl-card-head">
+              <span class="tl-date" data-es="Dic 2018 – Ene 2021" data-en="Dec 2018 – Jan 2021">Dic 2018 – Ene 2021</span>
+            </header>
+            <h3 class="tl-role" data-es="Quality Assurance Tester" data-en="Quality Assurance Tester">Quality Assurance Tester</h3>
+            <p class="tl-company">FPay (iFX Network / Banco Falabella)</p>
+            <ul class="tl-bullets">
+              <li data-es="Pruebas funcionales y no funcionales para apps mobile y web en el sector financiero" data-en="Functional and non-functional tests for financial mobile and web apps">Pruebas funcionales y no funcionales para apps mobile y web</li>
+              <li data-es="Validación de casos de uso transaccionales y flujos de pago end-to-end" data-en="Transactional use case validation and end-to-end payment flows">Validación de flujos de pago end-to-end</li>
+              <li class="tl-achievement" data-es="Liderazgo en la implementación de pruebas automatizadas de stress" data-en="Led automated stress testing implementation">Liderazgo en pruebas automatizadas de stress</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item tl-left">
+          <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+          <article class="timeline-card">
+            <header class="tl-card-head">
+              <span class="tl-date" data-es="Feb 2018 – Nov 2018" data-en="Feb 2018 – Nov 2018">Feb 2018 – Nov 2018</span>
+            </header>
+            <h3 class="tl-role" data-es="QA Tester Freelance" data-en="QA Tester Freelance">QA Tester Freelance</h3>
+            <p class="tl-company" data-es="Autónomo" data-en="Self-Employed">Autónomo</p>
+            <ul class="tl-bullets">
+              <li data-es="Testing manual para aplicaciones web y mobile de múltiples clientes" data-en="Manual testing for web and mobile applications across multiple clients">Testing manual para múltiples clientes web y mobile</li>
+              <li data-es="Documentación QA, diagramas de proceso y propuestas de mejora" data-en="QA documentation, process diagrams and improvement proposals">Documentación QA y propuestas de mejora</li>
+            </ul>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ════════════════════════════════════════════ -->
+  <section id="projects" class="projects section">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-es="Portafolio" data-en="Portfolio">Portafolio</span>
+        <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
+      </div>
+
+      <div class="projects-filters">
+        <button class="filter-btn active" data-filter="all"        data-es="Todos"          data-en="All">Todos</button>
+        <button class="filter-btn"        data-filter="qa"         data-es="QA Testing"     data-en="QA Testing">QA Testing</button>
+        <button class="filter-btn"        data-filter="automation" data-es="Automatización" data-en="Automation">Automatización</button>
+        <button class="filter-btn"        data-filter="ai"         data-es="AI Tools"       data-en="AI Tools">AI Tools</button>
+        <button class="filter-btn"        data-filter="dev"        data-es="Desarrollo"     data-en="Dev">Desarrollo</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- P6: AI Generator (featured) -->
+        <article class="proj-card proj-card--featured" data-category="ai">
+          <div class="proj-img-wrap">
+            <img src="/img/ai-generator.png" alt="AI QA Test Case Generator" loading="lazy" onerror="this.parentElement.classList.add('no-img')">
+            <div class="proj-overlay">
+              <span class="proj-internal-badge" data-es="Interno · Galileo" data-en="Internal · Galileo">Interno · Galileo</span>
             </div>
-        </section>
-
-        <aside class="main-social-links social-links">
-            <a href="https://github.com/alanpalmas" target="_blank" class="social github">
-                <img src="img/github.svg" alt="GitHub Icon">
-            </a>
-            <a href="https://www.linkedin.com/in/alanpalmas/" target="_blank" class="social linkedin">
-                <img src="img/in.svg" alt="LinkedIn Icon">
-            </a>
-        </aside>
-    </main>
-
-    <section id="about">
-        <div>
-            <div class="separator">
-                <h2 id="about-title">Sobre mí</h2>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--ai">AI Tool</span>
+              <span class="ptag">Gemini 2.5 Flash</span>
+              <span class="ptag">JavaScript</span>
+              <span class="ptag">Figma</span>
             </div>
-            <p class="about-text" id="about-text">
-                Soy <span>Software QA Engineer</span> dedicado y orientado al detalle, con una trayectoria comprobada en asegurar los más altos estándares de calidad en el desarrollo de software. Mi camino en el campo de QA comenzó como tester freelance, donde perfeccioné mis habilidades y desarrollé un agudo sentido del detalle.
-                <br /><br /> 
-                Mi primera experiencia formal fue en <span>Fpay</span>, donde colaboré con un excelente equipo de desarrollo para realizar tareas de QA. Este rol me permitió sumergirme en las complejidades del aseguramiento de calidad, trabajando estrechamente con los desarrolladores para identificar y resolver problemas, y asegurando la funcionalidad sin inconvenientes de nuestros productos.
-                <br /><br /> 
-                Después de mi tiempo en Fpay, me uní a la consultora <span>Find The Lead</span>, donde trabajé en una variedad de proyectos, principalmente enfocados en billeteras virtuales. Esta experiencia fue fundamental para mejorar mis conocimientos y experiencia en los procesos y metodologías de QA. Me encargué de realizar pruebas rigurosas, identificar errores y colaborar con equipos multifuncionales para implementar soluciones que mejoraran la experiencia del usuario.
-                <br /><br /> 
-                Actualmente, soy un orgulloso miembro del equipo de <span>SoFi Technologies</span>, de la cual tambien son parte  <span>Galileo Technologies</span> y <span>Technisys</span>. En mi rol, contribuyo al desarrollo y entrega de soluciones bancarias digitales de vanguardia. Trabajo en proyectos bancarios de alto perfil en Argentina y Latinoamérica, asegurando que nuestro software cumpla con los más altos estándares de calidad y fiabilidad.
-                <br /><br /> 
-                A lo largo de mi carrera, he utilizado una variedad de herramientas y tecnologías de QA, incluyendo Selenium, JIRA y Postman, para realizar pruebas automatizadas y manuales. Mis tareas a menudo implican crear y ejecutar casos de prueba, desarrollar planes de prueba y trabajar estrechamente con desarrolladores y partes interesadas para entregar aplicaciones robustas y fáciles de usar.
-                <br /><br /> 
-                Además de mi experiencia profesional, actualmente estoy cursando la tecnicatura en Análisis, Desarrollo y Programación de Software, lo que refuerza mi base técnica y me mantiene al tanto de las últimas tendencias y prácticas de la industria.
-                <br /><br /> 
-                Me apasiona entregar software de alta calidad y mejorar continuamente mis habilidades para contribuir al éxito de mi equipo y la satisfacción de nuestros usuarios.
-                <br /><br/>
-                Con el tiempo, mi enfoque se ha centrado en continuar aprendiendo y mejorar en el area de automatización de pruebas,
-                aplicando las mejores prácticas y técnicas de testing. Mis conocimientos en <span>pruebas manuales</span>, <span>automatizadas</span>, <span>analista funcional y de negocio</span>  me permiten brindar 
-                soluciones <span>eficientes</span> y <span>creativas</span>.
-                <br /><br />
-                Fuera de mi rutina laboral me capacito constantemente en diferentes tecnologias que suman a mi rol y dedico tiempo a lo mas importante que tengo que es mi familia.
-                <br /><br />
-                Estas son algunas herramientas y tecnologías con las que estoy familiarizado y con las que también he estado trabajando.
+            <h3 class="proj-title" data-es="AI QA Test Case Generator" data-en="AI QA Test Case Generator">AI QA Test Case Generator</h3>
+            <p class="proj-desc"
+               data-es="Herramienta interna con Gemini 2.5 Flash que genera casos de prueba a partir de texto, URLs de Figma, imágenes, videos MP4 y PDFs. Permite seleccionar tipo de testing (funcional, negativo, edge cases, seguridad, API), analizar gaps de cobertura contra casos existentes y exportar a CSV, Excel y PDF."
+               data-en="Internal tool powered by Gemini 2.5 Flash that generates test cases from text, Figma URLs, images, MP4 videos, and PDFs. Supports testing type selection (functional, negative, edge cases, security, API), coverage gap analysis against existing cases, and export to CSV, Excel and PDF.">
+              Herramienta interna con Gemini 2.5 Flash que genera casos de prueba a partir de texto, URLs de Figma, imágenes, videos MP4 y PDFs. Permite seleccionar tipo de testing, analizar gaps de cobertura y exportar a CSV, Excel y PDF.
             </p>
-            <ul id="tools-list">
-                <li class="tool">HTML</li>
-                <li class="tool">CSS</li>
-                <li class="tool">JavaScript</li>
-                <li class="tool">Confluence</li>
-                <li class="tool">Zephyr</li>
-                <li class="tool">Python</li>
-                <li class="tool">Pytest</li>
-                <li class="tool">SQL</li>
-                <li class="tool">PostgreSQL</li>
-                <li class="tool">Git/Github</li>
-                <li class="tool">Figma</li>
-                <li class="tool">JIRA</li>
-                <li class="tool">Postman</li>
-                <li class="tool">Android Studio</li>
-                <li class="tool">Selenium WebDriver</li>
-                <li class="tool">Selenium IDE</li>
-                <li class="tool">Appium</li>
-                <li class="tool">Katalon Studio</li>
-                <li class="tool">Soap UI</li>
-                <li class="tool">Lucidchart</li>
-                <li class="tool">PyCharm</li>
-                <li class="tool">C#</li>
-            </ul>
-        </div>
-        <div class="img-box">
-            <img src="https://images.credly.com/images/e0fb0b07-61bd-409d-9d3a-73ed5a2b9b57/Artboard_Copy_16.png" alt="QA Engineer" class="profile-img">
-            <img src="img/alanpng.png" class="profile-img" alt="Profile Image">
-            <img src="https://justcapital.com/wp-content/themes/justcapital/assets/img/company-logos/SOFI.png" alt="SOFI Logo" class="profile-img">
-        </div>
-    </section>
+            <div class="proj-footer">
+              <span class="proj-link proj-link--locked">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span data-es="Proyecto Interno" data-en="Internal Project">Proyecto Interno</span>
+              </span>
+            </div>
+          </div>
+        </article>
 
-    <section id="projects">
-        <div class="featured-projects-box">
-            <div class="separator">
-                <h2 id="projects-title">Algunos Proyectos</h2>
+        <!-- P7: Zephyr Tool (featured) -->
+        <article class="proj-card proj-card--featured" data-category="ai">
+          <div class="proj-img-wrap">
+            <img src="/img/zephyr-tool.png" alt="Zephyr Test Cycle Viewer" loading="lazy" onerror="this.parentElement.classList.add('no-img')">
+            <div class="proj-overlay">
+              <span class="proj-internal-badge" data-es="Interno · Galileo" data-en="Internal · Galileo">Interno · Galileo</span>
             </div>
-            <div class="project project1">
-                <div class="project-details-box">
-                    <div class="project-main-info">
-                        <span class="project-title" id="project1-title">Proyecto #1 - Urban Routes</span>
-                        <h3 class="project-subtitle" id="project1-subtitle">Web Testing</h3>
-                        <p class="project-description" id="project1-description">Este proyecto de QA para el sitio web de Urban Routes involucró: validación de diseños contra especificaciones de Figma, creación de casos de prueba, ejecución de pruebas manuales de UI, usuario final y nuevas funcionalidades. Identifiqué y reporté más de 50 bugs en Jira.</p>
-                        <div class="project-tools">
-                            <p>JavaScript, Devtools, JIRA</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-image-box">
-                    <a target="_blank" class="project-img-link">
-                        <img src="img/mapa.png" alt="Project Preview Image">
-                    </a>
-                </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--ai">Internal Tool</span>
+              <span class="ptag">JavaScript</span>
+              <span class="ptag">Zephyr</span>
+              <span class="ptag">HTML/CSS</span>
             </div>
-            <div class="project project2">
-                <div class="project-details-box">
-                    <div class="project-main-info">
-                        <span class="project-title" id="project2-title">Proyecto #2 - ABM Concesionaria</span>
-                        <h3 class="project-subtitle" id="project2-subtitle">Desarrollo de Software</h3>
-                        <p class="project-description" id="project2-description">Este proyecto se centró en el desarrollo de una aplicación de gestión para una concesionaria de automóviles. Utilizando el lenguaje C#, se diseñó la interfaz y se desarrolló la aplicación en Visual Studio con Windows Forms, y se creó una base de datos robusta con SQL Server. El sistema permite el alta, baja y modificación de vehículos, filtrado entre vehiculos usados, 0km, autos, camioneas, 4x4, hatchback, sedan, marcas entre otros datos, asegurando una gestión eficiente y segura de la información.</p>
-                        <div class="project-tools">
-                            <p>C#, SQL Server, Visual Studio, Windows Forms, UX, UI</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-image-box">
-                    <a target="_blank" class="project-img-link">
-                        <img src="img/abm.jpg" alt="Project Preview Image">
-                    </a>
-                </div>
+            <h3 class="proj-title" data-es="Zephyr Test Cycle Viewer" data-en="Zephyr Test Cycle Viewer">Zephyr Test Cycle Viewer</h3>
+            <p class="proj-desc"
+               data-es="Visor de exports de Zephyr Squad (XML, HTML, CSV). Dashboard con métricas de ejecución, gráfico de resultados, análisis de veredicto por ejecutor y modo comparación entre ciclos para detectar cambios de estado. Exporta reportes ejecutivos en PDF, CSV y HTML."
+               data-en="Zephyr Squad export viewer (XML, HTML, CSV). Dashboard with execution metrics, results chart, executor-level verdict analysis, and cycle comparison mode to detect status changes. Exports executive reports in PDF, CSV and HTML.">
+              Visor de exports de Zephyr Squad (XML, HTML, CSV). Dashboard con métricas, gráficos, modo comparación entre ciclos y exportación de reportes ejecutivos en PDF.
+            </p>
+            <div class="proj-footer">
+              <span class="proj-link proj-link--locked">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span data-es="Proyecto Interno" data-en="Internal Project">Proyecto Interno</span>
+              </span>
             </div>
-            <div class="project project3">
-                <div class="project-details-box">
-                    <div class="project-main-info">
-                        <span class="project-title" id="project3-title">Proyecto #3 - Api Test</span>
-                        <h3 class="project-subtitle" id="project3-subtitle">Pruebas Api</h3>
-                        <p class="project-description" id="project3-description">En este proyecto realicé pruebas de API para una aplicación de comercio electrónico llamada "Urban Grocers", enfocándome en asegurar la calidad y funcionalidad de los endpoints clave utilizados para la gestión de usuarios, productos y pedidos. Utilicé herramientas avanzadas y enfoques metodológicos para llevar a cabo pruebas exhaustivas que garantizan un rendimiento óptimo y una integración perfecta.</p>
-                        <div class="project-tools">
-                            <p>Postman, Jira, Zephyr, Jenkins, DevTools</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-image-box">
-                    <a target="_blank" class="project-img-link">
-                        <img src="img/apitest.png" alt="Project Preview Image">
-                    </a>
-                </div>
+          </div>
+        </article>
+
+        <!-- P1: Urban Routes -->
+        <article class="proj-card" data-category="qa">
+          <div class="proj-img-wrap">
+            <img src="/img/mapa.png" alt="Urban Routes Web Testing" loading="lazy">
+            <div class="proj-overlay"></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--qa">QA Testing</span>
+              <span class="ptag">JIRA</span>
+              <span class="ptag">Figma</span>
+              <span class="ptag">DevTools</span>
             </div>
-            <div class="project project4">
-                <div class="project-details-box">
-                    <div class="project-main-info">
-                        <span class="project-title" id="project4-title">Proyecto #4 - Automatizacion de login</span>
-                        <h3 class="project-subtitle" id="project4-subtitle">Automatizacion con Selenium y Python</h3>
-                        <p class="project-description" id="project4-description">En este proyecto Automaticé el proceso de inicio de sesión en una aplicación web utilizando Selenium, Python y Pytest. El objetivo del proyecto fue asegurar que la funcionalidad de inicio de sesión opere correctamente bajo diferentes escenarios, incluyendo credenciales válidas e inválidas, y la gestión de mensajes de error.</p>
-                        <div class="project-tools">
-                            <p>Selenuium WebDriver, Python, Pytest, Chrome WebDriver, PyCharm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-image-box">
-                    <a target="_blank" class="project-img-link">
-                        <img src="img/login.png" alt="Project Preview Image">
-                    </a>
-                </div>
+            <h3 class="proj-title" data-es="Urban Routes – Web Testing" data-en="Urban Routes – Web Testing">Urban Routes – Web Testing</h3>
+            <p class="proj-desc" data-es="Validación contra especificaciones Figma, creación de casos de prueba y pruebas manuales de UI. Más de 50 bugs identificados y reportados en JIRA." data-en="Design validation against Figma specs, test case creation and manual UI testing. 50+ bugs identified and reported in JIRA.">
+              Validación contra Figma, casos de prueba, pruebas manuales de UI. +50 bugs en JIRA.
+            </p>
+            <div class="proj-footer">
+              <a href="https://github.com/alanpalmas" target="_blank" rel="noopener" class="proj-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
             </div>
-            <div class="project project5">
-                <div class="project-details-box">
-                    <div class="project-main-info">
-                        <span class="project-title" id="project5-title">Proyecto #4 - Compra de entradas de cine</span>
-                        <h3 class="project-subtitle" id="project5-subtitle">Desarrollo de aplicacion de escritorio</h3>
-                        <p class="project-description" id="project5-description">En este proyecto desarrollé una aplicación de escritorio en C# utilizando Visual Studio para simular el proceso completo de compra de entradas de cine, como trabajo para una materia de la carrera que estoy cursando. La aplicación consta de varios formularios que guían al usuario a través de cada paso del proceso: desde la selección de la película y la elección de la fecha y hora, hasta la selección de asientos y la gestión del pago.</p>
-                        <div class="project-tools">
-                            <p>C#, Visual Studio, .NET, Windows Form, Diseño, UX, UI</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-image-box">
-                    <a target="_blank" class="project-img-link">
-                        <img src="img/entradascine.jpg" alt="Project Preview Image">
-                    </a>
-                </div>
+          </div>
+        </article>
+
+        <!-- P3: API Test -->
+        <article class="proj-card" data-category="qa">
+          <div class="proj-img-wrap">
+            <img src="/img/apitest.png" alt="API Testing Urban Grocers" loading="lazy">
+            <div class="proj-overlay"></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--qa">QA Testing</span>
+              <span class="ptag">Postman</span>
+              <span class="ptag">JIRA</span>
+              <span class="ptag">Zephyr</span>
             </div>
+            <h3 class="proj-title" data-es="API Testing – Urban Grocers" data-en="API Testing – Urban Grocers">API Testing – Urban Grocers</h3>
+            <p class="proj-desc" data-es="Pruebas de API para e-commerce: usuarios, productos y pedidos. Validación exhaustiva de endpoints con Postman y CI con Jenkins." data-en="API testing for e-commerce app: users, products and orders. Thorough endpoint validation with Postman and CI via Jenkins.">
+              Pruebas de API para e-commerce. Validación de endpoints con Postman, JIRA y Jenkins.
+            </p>
+            <div class="proj-footer">
+              <a href="https://github.com/alanpalmas" target="_blank" rel="noopener" class="proj-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- P4: Login Automation -->
+        <article class="proj-card" data-category="automation">
+          <div class="proj-img-wrap">
+            <img src="/img/login.png" alt="Login Automation Selenium Python" loading="lazy">
+            <div class="proj-overlay"></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--auto">Automation</span>
+              <span class="ptag">Selenium</span>
+              <span class="ptag">Python</span>
+              <span class="ptag">Pytest</span>
+            </div>
+            <h3 class="proj-title" data-es="Automatización de Login" data-en="Login Automation">Automatización de Login</h3>
+            <p class="proj-desc" data-es="Automatización del proceso de inicio de sesión con Selenium, Python y Pytest. Cubre credenciales válidas/inválidas y manejo de mensajes de error." data-en="Automated login flow with Selenium, Python and Pytest. Covers valid/invalid credentials and error message handling.">
+              Automatización del login con Selenium, Python y Pytest. Cubre escenarios válidos, inválidos y errores.
+            </p>
+            <div class="proj-footer">
+              <a href="https://github.com/alanpalmas" target="_blank" rel="noopener" class="proj-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- P2: ABM -->
+        <article class="proj-card" data-category="dev">
+          <div class="proj-img-wrap">
+            <img src="/img/abm.jpg" alt="ABM Concesionaria C#" loading="lazy">
+            <div class="proj-overlay"></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--dev">Dev</span>
+              <span class="ptag">C#</span>
+              <span class="ptag">SQL Server</span>
+              <span class="ptag">Windows Forms</span>
+            </div>
+            <h3 class="proj-title" data-es="ABM Concesionaria" data-en="Car Dealership ABM">ABM Concesionaria</h3>
+            <p class="proj-desc" data-es="App de gestión para concesionaria en C# + Windows Forms. CRUD de vehículos con filtros por tipo, marca, 0km/usados y más." data-en="Dealership management app in C# + Windows Forms. Vehicle CRUD with filters by type, brand, new/used and more.">
+              App de gestión para concesionaria en C# + Windows Forms. CRUD con filtros avanzados.
+            </p>
+            <div class="proj-footer">
+              <a href="https://github.com/alanpalmas/ABM-consesionaria" target="_blank" rel="noopener" class="proj-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- P5: Cinema -->
+        <article class="proj-card" data-category="dev">
+          <div class="proj-img-wrap">
+            <img src="/img/entradascine.jpg" alt="Compra de Entradas de Cine" loading="lazy">
+            <div class="proj-overlay"></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag ptag--dev">Dev</span>
+              <span class="ptag">C#</span>
+              <span class="ptag">.NET</span>
+              <span class="ptag">Windows Forms</span>
+            </div>
+            <h3 class="proj-title" data-es="Compra de Entradas de Cine" data-en="Movie Ticket Purchase App">Compra de Entradas de Cine</h3>
+            <p class="proj-desc" data-es="App de escritorio en C# para simular la compra de entradas. Formularios para selección de película, fecha, asientos y pago." data-en="Desktop app in C# simulating movie ticket purchase. Forms for movie selection, date, seats and payment.">
+              App de escritorio en C# para compra de entradas. Selección de película, asientos y pago.
+            </p>
+            <div class="proj-footer">
+              <a href="https://github.com/alanpalmas/Compra-entradas-de-cine" target="_blank" rel="noopener" class="proj-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════════════ -->
+  <section id="contact" class="contact section">
+    <div class="section-bg" data-circuit="radial" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-inner">
+        <span class="section-eyebrow" data-es="¿Hablamos?" data-en="Let's talk?">¿Hablamos?</span>
+        <h2 class="contact-title" data-es="Estoy disponible" data-en="I'm available">Estoy disponible</h2>
+        <p class="contact-sub" data-es="¿Buscás un QA Engineer para tu equipo o proyecto? No dudes en escribirme." data-en="Looking for a QA Engineer for your team or project? Don't hesitate to reach out.">
+          ¿Buscás un QA Engineer para tu equipo o proyecto? No dudes en escribirme.
+        </p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alanrpalmas@gmail.com&su=Contacto%20desde%20tu%20Portfolio&body=Hola%20Alan,"
+           class="btn btn-primary btn-xl magnetic"
+           data-es="Enviarme un correo" data-en="Send me an email">
+          Enviarme un correo
+        </a>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/alanpalmas/" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="LinkedIn">
+            <img src="/img/in.svg" alt="LinkedIn" width="28" height="28">
+          </a>
+          <a href="https://github.com/alanpalmas" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="GitHub">
+            <img src="/img/github.svg" alt="GitHub" width="28" height="28">
+          </a>
+          <a href="https://wa.me/+541139392590" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="WhatsApp">
+            <img src="/img/whatsapp.svg" alt="WhatsApp" width="28" height="28">
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div>
-            <span id="contact-title">¿Te interesó mi perfil?</span>
-            <h4 id="contact-heading">¡No dudes en contactarme!</h4>
-            <p id="contact-description">Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboracion.</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alanrpalmas@gmail.com&su=Contacto desde tu Portafolio&body=Hola Alan," class="cta cta2" id="contact-button">Enviame un correo</a>
-        </div>
-        <aside class="contact-social-links social-links">
-            <a href="https://github.com/alanpalmas" target="_blank" class="social github">
-                <img src="img/github.svg" alt="GitHub Icon">
-            </a>
-            <a href="https://www.linkedin.com/in/alanpalmas/" target="_blank" class="social linkedin">
-                <img src="img/in.svg" alt="LinkedIn Icon">
-            </a>
-            <a href="https://wa.me/+541139392590" target="_blank" class="social whatsapp">
-                <img src="img/whatsapp.svg" alt="WhatsApp Icon">
-            </a>
-        </aside>
-    </section>
+  <!-- ══ FOOTER ═════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; 2025 <strong>Alan Palmas</strong>
+        <span class="footer-sep">·</span>
+        <span data-es="Senior QA Engineer" data-en="Senior QA Engineer">Senior QA Engineer</span>
+      </p>
+      <p class="footer-open" data-es="Abierto a oportunidades remotas full-time y contractuales" data-en="Open to full-time and contract remote opportunities">
+        Abierto a oportunidades remotas full-time y contractuales
+      </p>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2024 <span>Alan Palmas</span></p>
-    </footer>
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
 
-    <script src="js/scripts.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

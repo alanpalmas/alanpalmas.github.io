@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alan Palmas – Software Quality Assurance Engineer</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+      font-size: 10.5pt;
+      color: #1a1a2e;
+      background: #f0f2f5;
+      padding: 30px 16px;
+      line-height: 1.55;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* ── Header / Hero ── */
+    .header {
+      background: linear-gradient(135deg, #0a0a0a 0%, #0d1117 60%, #111827 100%);
+      color: #fff;
+      padding: 36px 40px 28px;
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg, #00B3FF, #0090CC, #0077AA);
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+    }
+
+    .header h1 {
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+    .header h1 span { color: #00B3FF; }
+
+    .header .title {
+      font-size: 11.5pt;
+      color: #9ca3af;
+      font-weight: 400;
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 18px;
+    }
+    .contact-row a, .contact-row span {
+      color: #bae6fd;
+      text-decoration: none;
+      font-size: 9.5pt;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .contact-row a:hover { color: #00B3FF; }
+    .contact-row .dot {
+      color: #00B3FF;
+      font-size: 7pt;
+    }
+
+    /* ── Main content ── */
+    .body {
+      padding: 30px 40px 36px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 26px; }
+
+    .section-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #111827;
+      border-bottom: 2px solid #00B3FF;
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+    }
+
+    /* ── Summary ── */
+    .summary p {
+      color: #333;
+      font-size: 10.5pt;
+      line-height: 1.65;
+    }
+
+    /* ── Skills grid ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 24px;
+    }
+    .skill-cat { }
+    .skill-cat .cat-name {
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: #111827;
+      margin-bottom: 3px;
+    }
+    .skill-cat .cat-items {
+      font-size: 9.5pt;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* ── Experience ── */
+    .job { margin-bottom: 20px; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .job-title-block {}
+    .job-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #111827;
+    }
+    .job-company {
+      font-size: 10pt;
+      color: #0090CC;
+      font-weight: 600;
+    }
+    .job-meta {
+      text-align: right;
+      font-size: 9pt;
+      color: #777;
+    }
+    .job-meta .date { font-weight: 600; color: #555; }
+    .job-meta .location { font-size: 8.5pt; }
+
+    .job-projects {
+      font-size: 9pt;
+      color: #555;
+      font-style: italic;
+      margin-top: 3px;
+      margin-bottom: 6px;
+    }
+
+    .job ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 6px;
+    }
+    .job ul li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+      font-size: 10pt;
+      color: #333;
+      line-height: 1.55;
+    }
+    .job ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #00B3FF;
+      font-size: 9pt;
+      top: 1px;
+    }
+    .achievement {
+      color: #003d7a !important;
+      font-weight: 600;
+    }
+
+    /* ── Education ── */
+    .edu-item { margin-bottom: 12px; }
+    .edu-degree {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #111827;
+    }
+    .edu-inst {
+      font-size: 9.5pt;
+      color: #555;
+    }
+    .edu-meta {
+      font-size: 9pt;
+      color: #888;
+    }
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #003d7a;
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .badge.inprogress { background: #fff3e0; color: #e65100; }
+
+    /* ── Certs ── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px 24px;
+    }
+    .cert-item {
+      font-size: 9.5pt;
+      color: #444;
+      padding-left: 12px;
+      position: relative;
+    }
+    .cert-item::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #00B3FF;
+      font-size: 8.5pt;
+    }
+    .cert-item strong {
+      color: #111827;
+      display: block;
+      font-size: 9pt;
+    }
+
+    /* ── Languages ── */
+    .lang-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .lang-item {}
+    .lang-name { font-weight: 700; font-size: 10pt; color: #111827; }
+    .lang-level { font-size: 9pt; color: #666; }
+    .lang-bar {
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 2px;
+      margin-top: 4px;
+      width: 120px;
+      overflow: hidden;
+    }
+    .lang-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #00B3FF, #0090CC);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #eef0f4;
+      margin: 20px 0;
+    }
+
+    /* ── Footer note ── */
+    .footer-note {
+      text-align: center;
+      font-size: 8.5pt;
+      color: #aaa;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid #eef0f4;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; padding: 0; font-size: 9.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+      a { color: inherit !important; text-decoration: none !important; }
+      #cv-download-btn { display: none !important; }
+      .header { padding: 20px 36px 16px; }
+      .body { padding: 16px 36px 20px; }
+      .section { margin-bottom: 14px; }
+      .section-title { margin-bottom: 8px; }
+      .job { margin-bottom: 12px; }
+      .divider { margin: 8px 0; }
+      .skills-grid { gap: 6px 20px; }
+      .cert-grid { gap: 4px 20px; }
+      .summary p { line-height: 1.5; }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════════ HEADER ══════════════════════════════════════════ -->
+  <header class="header">
+    <h1>Alan <span>Palmas</span></h1>
+    <div class="title">Software Quality Assurance Engineer &nbsp;|&nbsp; Test Automation &nbsp;|&nbsp; FinTech &amp; Banking</div>
+    <div class="contact-row">
+      <a href="mailto:alanrpalmas@gmail.com">&#9993; alanrpalmas@gmail.com</a>
+      <span class="dot">●</span>
+      <a href="tel:+541139392590">&#128241; +54 11 3939-2590</a>
+      <span class="dot">●</span>
+      <a href="https://www.linkedin.com/in/alanpalmas" target="_blank">&#128279; linkedin.com/in/alanpalmas</a>
+      <span class="dot">●</span>
+      <a href="https://alanpalmas.github.io" target="_blank">&#128187; alanpalmas.github.io</a>
+      <span class="dot">●</span>
+      <span>&#127758; Buenos Aires, Argentina &nbsp;(UTC-3) — Open to Remote</span>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════ BODY ══════════════════════════════════════════ -->
+  <main class="body">
+
+    <!-- ── PROFESSIONAL SUMMARY ── -->
+    <section class="section summary">
+      <div class="section-title">Professional Summary</div>
+      <p>
+        Results-driven <strong>Software Quality Assurance Engineer with 5+ years of experience</strong> in manual and automated
+        <strong>software testing and quality control (QC)</strong> for <strong>FinTech and banking products</strong>.
+        Proven track record designing and executing end-to-end test strategies across mobile (iOS &amp; Android) and web/desktop platforms,
+        with deep expertise in <strong>Selenium, Appium, Postman, SoapUI, JMeter, JIRA, and Zephyr</strong>.
+        Skilled in <strong>API testing, performance/stress testing, regression testing, smoke testing, exploratory testing,
+        and defect lifecycle management</strong>.         Currently contributing to high-scale financial platforms at
+        <strong>Galileo Financial Technologies</strong> — the Latin American division of <strong>SoFi Technologies</strong> (US-based FinTech unicorn), originally joined through <strong>Technisys</strong> prior to its acquisition — having achieved a
+        <strong>15% reduction in production defects</strong> through improved critical test coverage and root cause analysis.
+        Experienced in <strong>CI/CD continuous testing pipelines</strong>, with a collaborative mindset, strong
+        <strong>Agile/Scrum</strong> background, and solid programming skills in <strong>Python, C#, and SQL</strong>.
+        Recognized for building internal <strong>AI-powered QA tools</strong> at Galileo — including a
+        <strong>multi-format test case generator</strong> (PDF, video, Excel, Figma MCP integration) and an
+        <strong>automated Zephyr reporting analyzer</strong> — measurably reducing test design and delivery cycle times.
+      </p>
+    </section>
+
+    <!-- ── TECHNICAL SKILLS ── -->
+    <section class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-cat">
+          <div class="cat-name">Test Automation</div>
+          <div class="cat-items">Selenium WebDriver/IDE · Appium · Katalon Studio · Python (pytest) · C#</div>
+        </div>
+        <div class="skill-cat">
+          <div class="cat-name">Testing Types</div>
+          <div class="cat-items">Manual &amp; Automated · Regression · Smoke · Exploratory · Functional · Non-Functional · Mobile (iOS/Android) · API · Performance · UAT · Integration · E2E Testing</div>
+        </div>
+        <div class="skill-cat">
+          <div class="cat-name">API &amp; Performance Testing</div>
+          <div class="cat-items">Postman · SoapUI · REST API Testing · Apache JMeter · Load &amp; Stress Testing · Endpoint Validation</div>
+        </div>
+        <div class="skill-cat">
+          <div class="cat-name">Test Management &amp; QC</div>
+          <div class="cat-items">JIRA · Zephyr · Test Case Design · Test Planning · Test Strategy · Test Coverage · Defect Lifecycle Management · Root Cause Analysis (RCA) · SDLC · STLC</div>
+        </div>
+        <div class="skill-cat">
+          <div class="cat-name">CI/CD, Dev Tools &amp; Languages</div>
+          <div class="cat-items">Git · GitHub · GitHub Actions · Jenkins · CI/CD Pipelines · Python · C# · SQL · MySQL · PostgreSQL · MongoDB · VS Code · Android Studio</div>
+        </div>
+        <div class="skill-cat">
+          <div class="cat-name">Domain &amp; Methodologies</div>
+          <div class="cat-items">FinTech · Banking · SaaS · Agile/Scrum · Kanban · Android · iOS · Web · Desktop · Cross-Platform Testing · Cross-Browser Testing · Payment Flows</div>
+        </div>
+        <div class="skill-cat" style="grid-column: span 2;">
+          <div class="cat-name">AI &amp; Internal QA Tooling <span style="font-weight:400; color:#00B3FF; font-size:8.5pt;">— Developed at Galileo</span></div>
+          <div class="cat-items">AI-Powered Test Case Generation · LLM Integration · Figma MCP · Multi-format Input Processing (PDF, DOCX, HTML, MP4, Excel, Screenshots) · Zephyr Report Automation · Stakeholder Report Generation · Internal Tool Development</div>
+        </div>
+        <div class="skill-cat" style="grid-column: span 2;">
+          <div class="cat-name">Currently Training <span style="font-weight:400; color:#00B3FF; font-size:8.5pt;">— In Progress</span></div>
+          <div class="cat-items">Kotlin &amp; Jetpack Compose (Native Android Development) &nbsp;·&nbsp; Flutter / Dart (Cross-Platform Mobile Development)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROFESSIONAL EXPERIENCE ── -->
+    <section class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- JOB 1 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-block">
+            <div class="job-title">Quality Assurance Engineer</div>
+            <div class="job-company">Galileo Financial Technologies · SoFi Technologies <span style="font-weight:400; opacity:0.7;">(ex Technisys)</span></div>
+          </div>
+          <div class="job-meta">
+            <div class="date">August 2022 – Present</div>
+            <div class="location">Buenos Aires, Argentina (Remote)</div>
+          </div>
+        </div>
+        <div class="job-projects">Projects: Banco Macro · Banco Nación · Banco Patagonia</div>
+        <ul>
+          <li>Designed and executed <strong>manual and automated test cases</strong> for core banking SaaS products across <strong>Android, iOS, and Desktop</strong> environments.</li>
+          <li>Performed <strong>API testing and service integration validation</strong> using Postman and SoapUI, ensuring reliability and correctness of critical financial service endpoints.</li>
+          <li>Managed the full <strong>defect lifecycle</strong> (creation, triage, tracking, closure) in <strong>JIRA and Zephyr</strong>, maintaining clear traceability between requirements and test execution.</li>
+          <li class="achievement">Achieved a 15% reduction in production defects by improving test coverage of high-risk and critical business scenarios.</li>
+          <li>Led <strong>regression testing, smoke testing, and release validation</strong> cycles across multiple environments, ensuring zero critical regressions in production deployments.</li>
+          <li>Collaborated in <strong>CI/CD continuous testing workflows</strong>, integrating automated test suites into deployment pipelines; monitored logs and performed <strong>root cause analysis (RCA)</strong> to reduce MTTD for production incidents.</li>
+          <li class="achievement">Engineered an internal <strong>Zephyr Cycle Summary reporting tool</strong> that automatically parses exported test cycle data and generates detailed QA metrics reports, eliminating manual effort and significantly reducing reporting and delivery time.</li>
+          <li class="achievement">Developed an <strong>AI-powered test case generation platform</strong> supporting multi-format inputs (plain text, PDF, DOCX, HTML, screenshots, MP4 videos, Excel test suites, and Figma mockups via <strong>Figma MCP integration</strong>) — enabling automated generation, editing, and export of structured test cases and <strong>stakeholder-ready QA scope reports</strong>, directly cutting test design cycle times.</li>
+        </ul>
+      </div>
+
+      <hr class="divider"/>
+
+      <!-- JOB 2 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-block">
+            <div class="job-title">Quality Assurance Analyst</div>
+            <div class="job-company">Find The Lead</div>
+          </div>
+          <div class="job-meta">
+            <div class="date">January 2021 – August 2022</div>
+            <div class="location">Buenos Aires, Argentina</div>
+          </div>
+        </div>
+        <div class="job-projects">Project: iFX Network</div>
+        <ul>
+          <li>Conducted <strong>requirements analysis and functional test case design</strong> for SaaS product features, ensuring full coverage of user stories and acceptance criteria.</li>
+          <li>Built and maintained <strong>test matrices</strong>, executed test cases, and performed <strong>UAT validation</strong> for web and mobile (Android, iOS, Desktop) applications.</li>
+          <li>Reported and tracked <strong>defects and incidents</strong> in JIRA, with full traceability through Office documentation and reporting tools.</li>
+          <li class="achievement">Reduced critical bug response time through optimized defect triage and communication processes between QA and development teams.</li>
+          <li>Executed <strong>functional, exploratory, and stress testing</strong> across Android, iOS, and Desktop environments, and led the <strong>implementation of automated stress testing</strong> practices.</li>
+        </ul>
+      </div>
+
+      <hr class="divider"/>
+
+      <!-- JOB 3 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-block">
+            <div class="job-title">Quality Assurance Tester</div>
+            <div class="job-company">FPay (iFX Network / Banco Falabella)</div>
+          </div>
+          <div class="job-meta">
+            <div class="date">December 2018 – January 2021</div>
+            <div class="location">Buenos Aires, Argentina</div>
+          </div>
+        </div>
+        <div class="job-projects">Projects: Banco Falabella · FPay</div>
+        <ul>
+          <li>Executed <strong>functional and non-functional tests</strong> for mobile (iOS/Android) and web/desktop applications in the financial sector.</li>
+          <li>Validated <strong>transactional use cases and end-to-end payment flows</strong>, ensuring correctness and compliance with business requirements.</li>
+          <li class="achievement">Led the implementation of automated stress testing practices, increasing test efficiency and coverage for performance-critical scenarios.</li>
+          <li>Analyzed <strong>functional requirements</strong>, documented test results, and produced comprehensive QA reports for release sign-off.</li>
+        </ul>
+      </div>
+
+      <hr class="divider"/>
+
+      <!-- JOB 4 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-block">
+            <div class="job-title">Quality Assurance Tester</div>
+            <div class="job-company">Freelance / Self-Employed</div>
+          </div>
+          <div class="job-meta">
+            <div class="date">February 2018 – November 2018</div>
+            <div class="location">Buenos Aires, Argentina</div>
+          </div>
+        </div>
+        <ul>
+          <li>Performed <strong>manual functional testing</strong> for web and mobile client applications, covering requirement analysis, test case design, and defect reporting.</li>
+          <li>Produced QA documentation, process diagrams, and improvement proposals for multiple client engagements.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ── -->
+    <section class="section">
+      <div class="section-title">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-degree">
+          Bachelor's Degree in Digital Technologies (Licenciado en Tecnologías Digitales)
+          <span class="badge inprogress">In Progress</span>
+        </div>
+        <div class="edu-inst">Universidad de la Ciudad de Buenos Aires (UNICABA)</div>
+        <div class="edu-meta">Expected graduation: 2027</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">
+          Higher Technical Degree – Software Analysis, Development &amp; Programming
+          <span class="badge">Graduated</span>
+        </div>
+        <div class="edu-inst">I.S.F.D. y T. N°93 Pte. Arturo Illia</div>
+        <div class="edu-meta">Técnico Superior en Análisis, Desarrollo y Programación de Software · 2025</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">
+          High School Diploma – Economics &amp; Organizational Management
+          <span class="badge">Completed</span>
+        </div>
+        <div class="edu-inst">Victoria High School (Colegio Superior Victoria)</div>
+        <div class="edu-meta">Bachiller en Economía y Gestión de las Organizaciones</div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS ── -->
+    <section class="section">
+      <div class="section-title">Certifications &amp; Courses</div>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <strong>CertiProf</strong>
+          Scrum Foundation Professional Certificate (SFPC) · Remote Work Professional Certificate
+        </div>
+        <div class="cert-item">
+          <strong>UTN (Universidad Tecnológica Nacional)</strong>
+          Professional Testing Master Avanzado
+        </div>
+        <div class="cert-item">
+          <strong>EducaciónIT</strong>
+          Software Tester QA · Test Case Analysis &amp; Design · Testing Automation with Selenium
+        </div>
+        <div class="cert-item">
+          <strong>Udemy</strong>
+          Master in Katalon Studio Automation · SQL Databases · Master in Python · Selenium with Python &amp; PyTest · Apache JMeter · Master in Java · Master in Web Development
+        </div>
+        <div class="cert-item">
+          <strong>CoderHouse</strong>
+          Agile Methodologies (Scrum &amp; Kanban) · UX/UI Design
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LANGUAGES ── -->
+    <section class="section">
+      <div class="section-title">Languages</div>
+      <div class="lang-row">
+        <div class="lang-item">
+          <div class="lang-name">Spanish</div>
+          <div class="lang-level">Native</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">English</div>
+          <div class="lang-level">Intermediate B2 — Currently studying at LEW Idiomas</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Open to full-time, contract, and remote opportunities worldwide &nbsp;·&nbsp;
+      Portfolio: <a onclick="window.open('https://alanpalmas.github.io')" style="color:#0090CC;cursor:pointer;">alanpalmas.github.io</a> &nbsp;·&nbsp;
+      LinkedIn: <a onclick="window.open('https://www.linkedin.com/in/alanpalmas')" style="color:#0090CC;cursor:pointer;">linkedin.com/in/alanpalmas</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── Download button (hidden on print) ── -->
+<a href="/pdf/cv-en.pdf" download="Alan_Palmas_QA_Engineer_CV.pdf" id="cv-download-btn"
+   title="Download PDF">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+       fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download PDF
+</a>
+<style>
+  #cv-download-btn {
+    position: fixed;
+    top: 20px; right: 24px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px;
+    background: #00B3FF;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,179,255,0.35);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    z-index: 9999;
+  }
+  #cv-download-btn:hover {
+    background: #009ae0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,179,255,0.5);
+  }
+  @media print { #cv-download-btn { display: none !important; } }
+</style>
+</body>
+</html>
