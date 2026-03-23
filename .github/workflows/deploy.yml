@@ -31,17 +31,25 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
 
       - name: Copy static assets
         run: |
-          cp -r img dist/img 2>/dev/null || true
-          cp cv.html dist/cv.html 2>/dev/null || true
-          cp cv-es.html dist/cv-es.html 2>/dev/null || true
-          cp -r pdf dist/pdf 2>/dev/null || true
+          cp -r img dist/img
+          cp cv.html dist/cv.html
+          cp cv-es.html dist/cv-es.html
+          cp -r pdf dist/pdf
+
+      - name: Verify critical assets
+        run: |
+          test -d dist/img  || (echo "ERROR: dist/img missing" && exit 1)
+          test -f dist/cv.html || (echo "ERROR: dist/cv.html missing" && exit 1)
+          test -f dist/cv-es.html || (echo "ERROR: dist/cv-es.html missing" && exit 1)
+          test -d dist/pdf  || (echo "ERROR: dist/pdf missing" && exit 1)
+          echo "All critical assets present."
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4

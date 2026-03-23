@@ -36,7 +36,14 @@ class CircuitBoard {
   // ── Observers ──────────────────────────────────────────────
   _bindObservers () {
     this._io = new IntersectionObserver(
-      ([entry]) => { this.visible = entry.isIntersecting },
+      ([entry]) => {
+        const wasVisible = this.visible
+        this.visible = entry.isIntersecting
+        // Resume loop only when newly becoming visible
+        if (this.visible && !wasVisible) {
+          this._loop(performance.now())
+        }
+      },
       { threshold: 0 }
     )
     this._io.observe(this.canvas.parentElement)
@@ -306,12 +313,17 @@ class CircuitBoard {
 
   // ── Animation loop ─────────────────────────────────────────
   _loop (prev) {
+    // Cancel any existing rAF before scheduling a new one
+    if (this.raf) cancelAnimationFrame(this.raf)
     this.raf = requestAnimationFrame((now) => {
-      if (this.visible) {
-        const dt = Math.min((now - prev) / 1000, 0.05)
-        this._update(dt)
-        this._draw()
+      if (!this.visible) {
+        // Stop loop — IntersectionObserver will restart it on re-entry
+        this.raf = null
+        return
       }
+      const dt = Math.min((now - prev) / 1000, 0.05)
+      this._update(dt)
+      this._draw()
       this._loop(now)
     })
   }
@@ -330,6 +342,8 @@ function _jitter (range) {
 
 // ── Public init ────────────────────────────────────────────────
 export function initCircuit () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
   document.querySelectorAll('.section-bg').forEach((bg) => {
     const canvas = document.createElement('canvas')
     bg.appendChild(canvas)

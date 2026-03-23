@@ -28,9 +28,13 @@ export function initProjects() {
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      // Update active button
-      filterBtns.forEach((b) => b.classList.remove('active'))
+      // Update active button + aria-pressed
+      filterBtns.forEach((b) => {
+        b.classList.remove('active')
+        b.setAttribute('aria-pressed', 'false')
+      })
       btn.classList.add('active')
+      btn.setAttribute('aria-pressed', 'true')
 
       const filter = btn.getAttribute('data-filter')
 
@@ -39,16 +43,18 @@ export function initProjects() {
         const show     = filter === 'all' || category === filter
 
         if (show) {
+          card.style.display = ''
           gsap.to(card, {
             opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out',
+            overwrite: 'auto',
             pointerEvents: 'auto',
           })
-          card.style.display = ''
         } else {
           gsap.to(card, {
             opacity: 0, scale: 0.92, duration: 0.3, ease: 'power2.in',
-            onComplete: () => { card.style.display = 'none' },
+            overwrite: 'auto',
             pointerEvents: 'none',
+            onComplete: () => { card.style.display = 'none' },
           })
         }
       })

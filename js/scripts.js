@@ -23,30 +23,18 @@ const translations = {
     en: {
         salutation: "Hello!",
         name: "My name is <span class='name-highlight'>Alan Palmas</span>.",
-        declaration: "Software QA Engineer passionate about software quality",
-        introduction: "As a Software QA Engineer, my mission is to ensure that software products meet the highest quality standards. I have knowledge in QA/QC, Web Testing, API Testing, and Mobile Testing, both manual and with test automation tools, which allows me to efficiently detect and prevent defects.",
+        declaration: "Senior QA Engineer · FinTech & Banking · Test Automation · AI QA Tools",
+        introduction: "With 5+ years in manual and automated testing for FinTech and banking products, I specialize in end-to-end test strategies, API testing, automation, and building AI-powered internal QA tools. Currently at SoFi Technologies / Galileo / Technisys.",
         about: "About Me",
-        aboutText: `I am a <span>Software QA Engineer</span> dedicated and detail-oriented, with a proven track record in ensuring the highest quality standards in software development. My journey in the QA field began as a freelance tester, where I honed my skills and developed a keen sense of detail.
+        aboutText: `I am a <span>Senior Software QA Engineer</span> with 5+ years of experience in manual and automated testing for <span>FinTech and banking products</span>. I specialize in end-to-end test strategies across mobile (iOS/Android), web, and desktop platforms, with deep expertise in <span>Selenium, Appium, Postman, SoapUI, JMeter, JIRA, and Zephyr</span>.
             <br /><br />
-            My first formal experience was at <span>Fpay</span>, where I collaborated with an excellent development team to perform QA tasks. This role allowed me to dive into the complexities of quality assurance, working closely with developers to identify and resolve issues, and ensuring the seamless functionality of our products.
+            I currently contribute to high-scale banking platforms at <span>SoFi Technologies / Galileo / Technisys</span>, working on projects for <span>Banco Macro, Banco Nación, and Banco Patagonia</span>. I achieved a <span>15% reduction in production defects</span> by improving critical test coverage and root cause analysis (RCA).
             <br /><br />
-            After my time at Fpay, I joined the consulting firm <span>Find The Lead</span>, where I worked on a variety of projects, mainly focused on virtual wallets. This experience was crucial in enhancing my knowledge and experience in QA processes and methodologies. I was responsible for conducting rigorous tests, identifying bugs, and collaborating with cross-functional teams to implement solutions that improved user experience.
+            I built internal <span>AI-powered QA tools</span> — including a multi-format test case generator with <span>Figma MCP integration</span> and an automated <span>Zephyr</span> report analyzer — measurably reducing test design and delivery cycle times.
             <br /><br />
-            Currently, I am a proud member of the team at <span>SoFi Technologies</span>, which also includes <span>Galileo Technologies</span> and <span>Technisys</span>. In my role, I contribute to the development and delivery of cutting-edge digital banking solutions. I work on high-profile banking projects in Argentina and Latin America, ensuring that our software meets the highest standards of quality and reliability.
+            I hold a <span>Higher Technical Degree in Software Analysis, Development & Programming</span> and am currently pursuing a <span>Bachelor's Degree in Digital Technologies</span> at UNICABA. I continuously upskill in automation, CI/CD, and mobile development with Kotlin and Flutter.
             <br /><br />
-            Throughout my career, I have used a variety of QA tools and technologies, including Selenium, JIRA, and Postman, to perform automated and manual tests. My tasks often involve creating and executing test cases, developing test plans, and working closely with developers and stakeholders to deliver robust and user-friendly applications.
-            <br /><br />
-            In addition to my professional experience, I am currently pursuing a degree in Software Analysis, Development, and Programming, which strengthens my technical foundation and keeps me up-to-date with the latest industry trends and practices.
-            <br /><br />
-            I am passionate about delivering high-quality software and continuously improving my skills to contribute to the success of my team and the satisfaction of our users.
-            <br /><br />
-            Over time, my focus has been on continuing to learn and improve in the area of test automation,
-            applying best practices and testing techniques. My knowledge in <span>manual testing</span>, <span>automated testing</span>, <span>functional and business analysis</span> allows me to provide 
-            <span>efficient</span> and <span>creative</span> solutions.
-            <br /><br />
-            Outside of my work routine, I constantly train in different technologies that add to my role and dedicate time to the most important thing I have, which is my family.
-            <br /><br />
-            These are some tools and technologies I am familiar with and have also been working with.`,
+            Here are some of the tools and technologies I work with:`,
         projects: "Some Projects",
         project1: {
             title: "Project #1 - Urban Routes",
@@ -71,13 +59,24 @@ const translations = {
         project5: {
             title: "Project #5 - Movie Ticket Purchase",
             subtitle: "Desktop Application Development",
-            description: "In this project, I developed a desktop application in C# using Visual Studio to simulate the complete process of buying movie tickets as a work for a subject in the degree I am pursuing. The application consists of several forms that guide the user through each step of the process: from selecting the movie and choosing the date and time to selecting seats and managing payment."
+            description: "In this project, I developed a desktop application in C# using Visual Studio to simulate the complete process of buying movie tickets. The application consists of several forms guiding the user through each step: from selecting the movie and date/time, to choosing seats and managing payment."
+        },
+        project6: {
+            title: "Project #6 - AI QA Test Case Generator",
+            subtitle: "Internal AI Tool · SoFi Technologies",
+            description: "Internal AI-powered test case generation platform built at SoFi Technologies. Processes multiple input formats (plain text, PDF, DOCX, HTML, screenshots, MP4 videos, Excel test suites) with Figma MCP integration. Enables automated generation, editing, and export of structured test cases and stakeholder-ready QA scope reports, directly cutting test design cycle times."
+        },
+        project7: {
+            title: "Project #7 - Zephyr QA Reporting Tool",
+            subtitle: "QA Report Automation · SoFi Technologies",
+            description: "Internal tool developed at SoFi Technologies that automatically parses exported Zephyr test cycle data and generates detailed QA metrics reports. Eliminated manual reporting effort, significantly reduced delivery times, and improved quality status visibility for the team and stakeholders."
         },
         contactTitle: "Interested in my profile?",
         contactHeading: "Don't hesitate to contact me!",
         contactDescription: "Send me an email or a WhatsApp message and I will be happy to answer your questions, discuss job opportunities or collaborations.",
         contactButton: "Send me an email",
         ctaContact: "Contact",
+        ctaCV: "My Resume",
         languageToggle: "Español",
         nav: {
             about: "About Me",
@@ -89,30 +88,18 @@ const translations = {
     es: {
         salutation: "¡Hola!",
         name: "Mi nombre es <span class='name-highlight'>Alan Palmas</span>.",
-        declaration: "Software QA Engineer apasionado por la calidad del software",
-        introduction: "Como Software QA Engineer, mi misión es asegurar que los productos de software cumplan con los más altos estándares de calidad. Cuento con conocimientos en QA/QC, Web Testing, API Testing y Mobile Testing, tanto manual como con herramientas de automatización de pruebas, esto me permite detectar y prevenir defectos de manera eficiente.",
+        declaration: "Senior QA Engineer · FinTech & Banking · Automatización · AI QA Tools",
+        introduction: "Con más de 5 años en testing manual y automatizado para productos FinTech y bancarios, me especializo en estrategias de prueba end-to-end, API testing, automatización y desarrollo de herramientas internas de QA potenciadas con IA. Actualmente en SoFi Technologies / Galileo / Technisys.",
         about: "Sobre mí",
-        aboutText: `Soy <span>Software QA Engineer</span> dedicado y orientado al detalle, con una trayectoria comprobada en asegurar los más altos estándares de calidad en el desarrollo de software. Mi camino en el campo de QA comenzó como tester freelance, donde perfeccioné mis habilidades y desarrollé un agudo sentido del detalle.
+        aboutText: `Soy <span>Senior Software QA Engineer</span> con más de 5 años de experiencia en testing manual y automatizado para <span>productos FinTech y bancarios</span>. Me especializo en estrategias de prueba end-to-end en plataformas mobile (iOS/Android), web y desktop, con dominio de <span>Selenium, Appium, Postman, SoapUI, JMeter, JIRA y Zephyr</span>.
             <br /><br />
-            Mi primera experiencia formal fue en <span>Fpay</span>, donde colaboré con un excelente equipo de desarrollo para realizar tareas de QA. Este rol me permitió sumergirme en las complejidades del aseguramiento de calidad, trabajando estrechamente con los desarrolladores para identificar y resolver problemas, y asegurando la funcionalidad sin inconvenientes de nuestros productos.
+            Actualmente contribuyo en <span>SoFi Technologies / Galileo / Technisys</span> a plataformas bancarias de alta escala para clientes como <span>Banco Macro, Banco Nación y Banco Patagonia</span>. Logré una <span>reducción del 15% en defectos en producción</span> mejorando la cobertura de casos críticos y el análisis de causa raíz (RCA).
             <br /><br />
-            Después de mi tiempo en Fpay, me uní a la consultora <span>Find The Lead</span>, donde trabajé en una variedad de proyectos, principalmente enfocados en billeteras virtuales. Esta experiencia fue fundamental para mejorar mis conocimientos y experiencia en los procesos y metodologías de QA. Me encargué de realizar pruebas rigurosas, identificar errores y colaborar con equipos multifuncionales para implementar soluciones que mejoraran la experiencia del usuario.
+            Desarrollé herramientas internas de QA potenciadas con <span>Inteligencia Artificial</span> — incluyendo un generador de casos de prueba multi-formato con integración <span>Figma MCP</span> y un analizador automático de reportes <span>Zephyr</span> — reduciendo significativamente los tiempos de diseño y entrega de pruebas.
             <br /><br />
-            Actualmente, soy un orgulloso miembro del equipo de <span>SoFi Technologies</span>, de la cual tambien son parte  <span>Galileo Technologies</span> y <span>Technisys</span>. En mi rol, contribuyo al desarrollo y entrega de soluciones bancarias digitales de vanguardia. Trabajo en proyectos bancarios de alto perfil en Argentina y Latinoamérica, asegurando que nuestro software cumpla con los más altos estándares de calidad y fiabilidad.
+            Soy <span>Técnico Superior en Análisis, Desarrollo y Programación de Software</span> y actualmente curso la <span>Licenciatura en Tecnologías Digitales</span> en UNICABA. Me capacito continuamente en automatización, CI/CD y desarrollo mobile con Kotlin y Flutter.
             <br /><br />
-            A lo largo de mi carrera, he utilizado una variedad de herramientas y tecnologías de QA, incluyendo Selenium, JIRA y Postman, para realizar pruebas automatizadas y manuales. Mis tareas a menudo implican crear y ejecutar casos de prueba, desarrollar planes de prueba y trabajar estrechamente con desarrolladores y partes interesadas para entregar aplicaciones robustas y fáciles de usar.
-            <br /><br />
-            Además de mi experiencia profesional, actualmente estoy cursando la tecnicatura en Análisis, Desarrollo y Programación de Software, lo que refuerza mi base técnica y me mantiene al tanto de las últimas tendencias y prácticas de la industria.
-            <br /><br />
-            Me apasiona entregar software de alta calidad y mejorar continuamente mis habilidades para contribuir al éxito de mi equipo y la satisfacción de nuestros usuarios.
-            <br /><br />
-            Con el tiempo, mi enfoque se ha centrado en continuar aprendiendo y mejorar en el area de automatización de pruebas,
-            aplicando las mejores prácticas y técnicas de testing. Mis conocimientos en <span>pruebas manuales</span>, <span>automatizadas</span>, <span>analista funcional y de negocio</span>  me permiten brindar 
-            soluciones <span>eficientes</span> y <span>creativas</span>.
-            <br /><br />
-            Fuera de mi rutina laboral me capacito constantemente en diferentes tecnologias que suman a mi rol y dedico tiempo a lo mas importante que tengo que es mi familia.
-            <br /><br />
-            Estas son algunas herramientas y tecnologías con las que estoy familiarizado y con las que también he estado trabajando.`,
+            Estas son algunas herramientas y tecnologías con las que trabajo:`,
         projects: "Proyectos",
         project1: {
             title: "Proyecto #1 - Urban Routes",
@@ -135,15 +122,26 @@ const translations = {
             description: "En este proyecto Automaticé el proceso de inicio de sesión en una aplicación web utilizando Selenium, Python y Pytest. El objetivo del proyecto fue asegurar que la funcionalidad de inicio de sesión opere correctamente bajo diferentes escenarios, incluyendo credenciales válidas e inválidas, y la gestión de mensajes de error."
         },
         project5: {
-            title: "Proyecto #5 - Compra de entradas de cine",
-            subtitle: "Desarrollo de aplicacion de escritorio",
-            description: "En este proyecto desarrollé una aplicación de escritorio en C# utilizando Visual Studio para simular el proceso completo de compra de entradas de cine, como trabajo para una materia de la carrera que estoy cursando. La aplicación consta de varios formularios que guían al usuario a través de cada paso del proceso: desde la selección de la película y la elección de la fecha y hora, hasta la selección de asientos y la gestión del pago."
+            title: "Proyecto #5 - Compra de Entradas de Cine",
+            subtitle: "Desarrollo de Aplicación de Escritorio",
+            description: "En este proyecto desarrollé una aplicación de escritorio en C# utilizando Visual Studio para simular el proceso completo de compra de entradas de cine. La aplicación consta de varios formularios que guían al usuario a través de cada paso: desde la selección de la película y la fecha/hora, hasta la selección de asientos y la gestión del pago."
+        },
+        project6: {
+            title: "Proyecto #6 - AI QA Test Case Generator",
+            subtitle: "Herramienta Interna con IA · SoFi Technologies",
+            description: "Plataforma interna de generación de casos de prueba potenciada con IA, desarrollada en SoFi Technologies. Procesa múltiples formatos de entrada (texto, PDF, DOCX, HTML, capturas, videos MP4, planillas Excel) con integración Figma MCP. Permite generar, editar y exportar casos de prueba estructurados e informes de alcance para stakeholders, reduciendo significativamente los ciclos de diseño de pruebas."
+        },
+        project7: {
+            title: "Proyecto #7 - Zephyr QA Reporting Tool",
+            subtitle: "Automatización de Reportes QA · SoFi Technologies",
+            description: "Herramienta interna desarrollada en SoFi Technologies que parsea automáticamente los exports de ciclos de prueba de Zephyr y genera reportes detallados de métricas QA. Eliminó el trabajo manual de reporting, redujo significativamente los tiempos de entrega y mejoró la visibilidad del estado de calidad para el equipo y stakeholders."
         },
         contactTitle: "¿Te interesó mi perfil?",
         contactHeading: "¡No dudes en contactarme!",
         contactDescription: "Envíame un correo electrónico o un mensaje por WhatsApp y estaré encantado de responder a tus preguntas, discutir oportunidades laborales o de colaboración.",
         contactButton: "Envíame un correo",
         ctaContact: "Contacto",
+        ctaCV: "Mi CV",
         languageToggle: "English",
         nav: {
             about: "Sobre mí",
@@ -190,6 +188,14 @@ function updateLanguage() {
     document.getElementById("project5-title").textContent = translations[currentLanguage].project5.title;
     document.getElementById("project5-subtitle").textContent = translations[currentLanguage].project5.subtitle;
     document.getElementById("project5-description").textContent = translations[currentLanguage].project5.description;
+
+    document.getElementById("project6-title").textContent = translations[currentLanguage].project6.title;
+    document.getElementById("project6-subtitle").textContent = translations[currentLanguage].project6.subtitle;
+    document.getElementById("project6-description").textContent = translations[currentLanguage].project6.description;
+
+    document.getElementById("project7-title").textContent = translations[currentLanguage].project7.title;
+    document.getElementById("project7-subtitle").textContent = translations[currentLanguage].project7.subtitle;
+    document.getElementById("project7-description").textContent = translations[currentLanguage].project7.description;
 
     document.getElementById("contact-title").textContent = translations[currentLanguage].contactTitle;
     document.getElementById("contact-heading").textContent = translations[currentLanguage].contactHeading;

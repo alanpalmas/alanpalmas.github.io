@@ -9,17 +9,25 @@
   <meta property="og:description" content="Portfolio de Alan Palmas. Senior QA Engineer especializado en FinTech y Banca. 5+ años de experiencia, AI Tools, automatización." />
   <meta property="og:url" content="https://alanpalmas.github.io" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://alanpalmas.github.io/img/qa-logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Alan Palmas – Senior Software QA Engineer" />
+  <meta name="twitter:description" content="Portfolio de Alan Palmas. Senior QA Engineer especializado en FinTech y Banca." />
+  <link rel="canonical" href="https://alanpalmas.github.io" />
   <title>Alan Palmas – Senior QA Engineer | FinTech & Banking</title>
   <link rel="icon" type="image/png" href="/img/qa-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
   <!-- Custom Cursor -->
-  <div class="cursor-dot" id="cursor-dot"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
   <!-- ══ NAVBAR ══════════════════════════════════════════════ -->
   <header class="navbar" id="navbar">
@@ -38,9 +46,9 @@
       </ul>
 
       <div class="nav-actions">
-        <button class="lang-btn magnetic" id="lang-toggle" aria-label="Toggle language">EN</button>
+        <button class="lang-btn magnetic" id="lang-toggle" aria-label="Cambiar idioma / Toggle language">EN</button>
         <a href="/cv.html" target="_blank" class="nav-cv magnetic" data-es="Mi CV" data-en="Resume">Mi CV</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -59,9 +67,11 @@
     </ul>
   </div>
 
+  <main id="main-content">
+
   <!-- ══ HERO ═══════════════════════════════════════════════ -->
   <section id="hero" class="hero">
-    <canvas id="hero-canvas"></canvas>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-noise"></div>
 
     <div class="hero-content">
@@ -121,19 +131,19 @@
         </div>
 
         <div class="about-stats-col">
-          <div class="stat-card" data-aos>
+          <div class="stat-card">
             <div class="stat-value"><span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span></div>
             <div class="stat-label" data-es="Años de experiencia" data-en="Years of experience">Años de experiencia</div>
           </div>
-          <div class="stat-card" data-aos>
+          <div class="stat-card">
             <div class="stat-value"><span class="stat-num" data-target="15">0</span><span class="stat-suffix">%</span></div>
             <div class="stat-label" data-es="Reducción de defectos en producción" data-en="Production defect reduction">Reducción de defectos</div>
           </div>
-          <div class="stat-card" data-aos>
+          <div class="stat-card">
             <div class="stat-value"><span class="stat-num" data-target="7">0</span><span class="stat-suffix">+</span></div>
             <div class="stat-label" data-es="Proyectos destacados" data-en="Featured projects">Proyectos destacados</div>
           </div>
-          <div class="stat-card" data-aos>
+          <div class="stat-card">
             <div class="stat-value"><span class="stat-num" data-target="3">0</span><span class="stat-suffix">+</span></div>
             <div class="stat-label" data-es="Bancos importantes" data-en="Major banks">Bancos importantes</div>
           </div>
@@ -324,12 +334,12 @@
         <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
       </div>
 
-      <div class="projects-filters">
-        <button class="filter-btn active" data-filter="all"        data-es="Todos"          data-en="All">Todos</button>
-        <button class="filter-btn"        data-filter="qa"         data-es="QA Testing"     data-en="QA Testing">QA Testing</button>
-        <button class="filter-btn"        data-filter="automation" data-es="Automatización" data-en="Automation">Automatización</button>
-        <button class="filter-btn"        data-filter="ai"         data-es="AI Tools"       data-en="AI Tools">AI Tools</button>
-        <button class="filter-btn"        data-filter="dev"        data-es="Desarrollo"     data-en="Dev">Desarrollo</button>
+      <div class="projects-filters" role="group" aria-label="Filtrar proyectos">
+        <button class="filter-btn active" data-filter="all"        data-es="Todos"          data-en="All"          aria-pressed="true">Todos</button>
+        <button class="filter-btn"        data-filter="qa"         data-es="QA Testing"     data-en="QA Testing"   aria-pressed="false">QA Testing</button>
+        <button class="filter-btn"        data-filter="automation" data-es="Automatización" data-en="Automation"   aria-pressed="false">Automatización</button>
+        <button class="filter-btn"        data-filter="ai"         data-es="AI Tools"       data-en="AI Tools"     aria-pressed="false">AI Tools</button>
+        <button class="filter-btn"        data-filter="dev"        data-es="Desarrollo"     data-en="Dev"          aria-pressed="false">Desarrollo</button>
       </div>
 
       <div class="projects-grid" id="projects-grid">
@@ -545,24 +555,26 @@
         </a>
         <div class="contact-social">
           <a href="https://www.linkedin.com/in/alanpalmas/" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="LinkedIn">
-            <img src="/img/in.svg" alt="LinkedIn" width="28" height="28">
+            <img src="/img/in.svg" alt="" width="28" height="28" aria-hidden="true">
           </a>
           <a href="https://github.com/alanpalmas" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="GitHub">
-            <img src="/img/github.svg" alt="GitHub" width="28" height="28">
+            <img src="/img/github.svg" alt="" width="28" height="28" aria-hidden="true">
           </a>
           <a href="https://wa.me/+541139392590" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="WhatsApp">
-            <img src="/img/whatsapp.svg" alt="WhatsApp" width="28" height="28">
+            <img src="/img/whatsapp.svg" alt="" width="28" height="28" aria-hidden="true">
           </a>
         </div>
       </div>
     </div>
   </section>
 
+  </main><!-- /#main-content -->
+
   <!-- ══ FOOTER ═════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container footer-inner">
       <p class="footer-copy">
-        &copy; 2025 <strong>Alan Palmas</strong>
+        &copy; 2026 <strong>Alan Palmas</strong>
         <span class="footer-sep">·</span>
         <span data-es="Senior QA Engineer" data-en="Senior QA Engineer">Senior QA Engineer</span>
       </p>

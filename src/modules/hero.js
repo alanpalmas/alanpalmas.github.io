@@ -134,17 +134,22 @@ function initParticles() {
 
 // ── GSAP Entrance Animations ─────────────────────────────────
 function initEntranceAnim() {
+  const els = ['.hero-tag', '.hero-title', '.hero-role', '.hero-description', '.hero-cta']
+
+  // Set initial hidden state BEFORE building the timeline
+  gsap.set(els, { opacity: 0, y: 40 })
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set(els, { opacity: 1, y: 0 })
+    return
+  }
+
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
   tl.to('.hero-tag',         { opacity: 1, y: 0, duration: 0.7, delay: 0.4 })
     .to('.hero-title',       { opacity: 1, y: 0, duration: 0.9 }, '-=0.3')
     .to('.hero-role',        { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
     .to('.hero-description', { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
     .to('.hero-cta',         { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
-
-  // Set initial states
-  gsap.set(['.hero-tag', '.hero-title', '.hero-role', '.hero-description', '.hero-cta'], {
-    y: 40,
-  })
 }
 
 // ── Typewriter Role Cycle ─────────────────────────────────────

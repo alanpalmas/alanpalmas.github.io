@@ -1,6 +1,5 @@
 // ── i18n data ─────────────────────────────────────────────────
-const ROLES_ES = ['Senior QA Engineer', 'Test Automation Specialist', 'FinTech QA Lead', 'AI QA Tools Builder']
-const ROLES_EN = ['Senior QA Engineer', 'Test Automation Specialist', 'FinTech QA Lead', 'AI QA Tools Builder']
+const ROLES = ['Senior QA Engineer', 'Test Automation Specialist', 'FinTech QA Lead', 'AI QA Tools Builder']
 
 let currentLang = 'es'
 
@@ -54,6 +53,8 @@ export function initNav(lenis) {
   hamburger?.addEventListener('click', () => {
     const isOpen = mobileMenu?.classList.toggle('open')
     hamburger.classList.toggle('open')
+    hamburger.setAttribute('aria-expanded', String(isOpen))
+    hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú')
     document.body.style.overflow = isOpen ? 'hidden' : ''
     mobileMenu?.setAttribute('aria-hidden', String(!isOpen))
   })
@@ -63,6 +64,8 @@ export function initNav(lenis) {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open')
       hamburger?.classList.remove('open')
+      hamburger?.setAttribute('aria-expanded', 'false')
+      hamburger?.setAttribute('aria-label', 'Abrir menú')
       document.body.style.overflow = ''
     })
   })
@@ -85,10 +88,9 @@ export function initNav(lenis) {
     langToggle.textContent = next === 'es' ? 'EN' : 'ES'
     updateI18n(next)
 
-    // Cycle roles in new language
-    const roles = next === 'es' ? ROLES_ES : ROLES_EN
+    // Reset role text to first item (same for both languages)
     const roleEl = document.querySelector('.hero-role-text')
-    if (roleEl) roleEl.textContent = roles[0]
+    if (roleEl) roleEl.textContent = ROLES[0]
   })
 
   // ── Active nav link on scroll ──
