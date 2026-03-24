@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Alan Palmas — Ingeniero de Calidad de Software / QA Engineer. Automatización Selenium, Appium, APIs, FinTech. Buenos Aires, remoto." />
   <title>Alan Palmas – Ingeniero de Calidad de Software</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,19 +81,26 @@
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 24px;
+      gap: 8px 18px;
       margin-top: 18px;
+      align-items: baseline;
     }
-    .contact-row a, .contact-row span {
+    .contact-row .contact-item {
+      color: #bae6fd;
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+    .contact-row .contact-item a {
       color: #bae6fd;
       text-decoration: none;
-      font-size: 9.5pt;
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      word-break: break-all;
     }
-    .contact-row a:hover { color: #00B3FF; }
-    .contact-row .dot { color: #00B3FF; font-size: 7pt; }
+    .contact-row .contact-item a:hover { color: #00B3FF; }
+    .contact-row .contact-label {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .contact-row .dot { color: #00B3FF; font-size: 8pt; user-select: none; }
 
     /* ── Body ── */
     .body { padding: 30px 40px 36px; }
@@ -103,7 +111,7 @@
       font-size: 8.5pt;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 0.06em;
       color: #111827;
       border-bottom: 2px solid #00B3FF;
       padding-bottom: 4px;
@@ -134,6 +142,7 @@
       color: #444;
       line-height: 1.5;
     }
+    .skill-cat-wide { grid-column: 1 / -1; }
 
     /* ── Experiencia ── */
     .job { margin-bottom: 20px; }
@@ -183,12 +192,14 @@
       line-height: 1.55;
     }
     .job ul li::before {
-      content: '▸';
+      content: '\2022';
       position: absolute;
       left: 0;
       color: #00B3FF;
-      font-size: 9pt;
-      top: 1px;
+      font-size: 11pt;
+      font-weight: 700;
+      line-height: 1.4;
+      top: 0;
     }
     .achievement {
       color: #003d7a !important;
@@ -236,11 +247,14 @@
       position: relative;
     }
     .cert-item::before {
-      content: '✓';
+      content: '\2022';
       position: absolute;
       left: 0;
       color: #00B3FF;
-      font-size: 8.5pt;
+      font-size: 10pt;
+      font-weight: 700;
+      line-height: 1.2;
+      top: 0;
     }
     .cert-item strong {
       color: #111827;
@@ -285,22 +299,60 @@
       border-top: 1px solid #eef0f4;
     }
 
+    /* Print-only header (hidden on screen, shown in PDF for ATS text order) */
+    .print-header { display: none; }
+    .print-header .ph-name {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+    .print-header .ph-title {
+      font-size: 11pt;
+      color: #555;
+      margin-bottom: 6px;
+    }
+    .print-header .ph-contact {
+      font-size: 9pt;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #0090CC;
+    }
+
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
     @media print {
       body { background: #fff; padding: 0; font-size: 9.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .page { box-shadow: none; border-radius: 0; max-width: 100%; }
       a { color: inherit !important; text-decoration: none !important; }
-      #cv-download-btn { display: none !important; }
-      .header { padding: 20px 36px 16px; }
-      .header-inner { display: flex; align-items: flex-start; gap: 20px; }
-      .header-text { flex: 1; min-width: 0; }
-      .photo { width: 130px; height: 130px; box-shadow: none; }
+      .cv-actions { display: none !important; }
+      .section-title, .job-header { page-break-after: avoid; }
+      .job { page-break-inside: auto; }
+
+      /* ATS: hide dark header in PDF; .print-header in <main> provides name/contact */
+      .header { display: none !important; }
+      .print-header { display: block !important; }
+
+      /* ATS: job headers stack vertically so dates stay with their job */
+      .job-header { display: block !important; }
+      .job-meta { text-align: left !important; margin-top: 2px; }
+
       .body { padding: 16px 36px 20px; }
       .section { margin-bottom: 14px; }
       .section-title { margin-bottom: 8px; }
       .job { margin-bottom: 12px; }
       .divider { margin: 8px 0; }
-      .skills-grid { gap: 6px 20px; }
-      .cert-grid { gap: 4px 20px; }
+      .skills-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+        gap: 6px 0;
+      }
+      .skill-cat-wide { grid-column: auto; }
       .summary p { line-height: 1.5; }
     }
 
@@ -315,17 +367,17 @@
     <div class="header-inner">
       <div class="header-text">
         <h1>Alan <span>Palmas</span></h1>
-        <div class="title">Ingeniero de Calidad de Software &nbsp;|&nbsp; Automatización de Pruebas &nbsp;|&nbsp; FinTech y Banca</div>
+        <div class="title">Ingeniero de Calidad de Software (QA Engineer) &nbsp;|&nbsp; Automatización &nbsp;|&nbsp; FinTech y Banca</div>
         <div class="contact-row">
-          <a href="mailto:alanrpalmas@gmail.com">&#9993; alanrpalmas@gmail.com</a>
-          <span class="dot">●</span>
-          <a href="tel:+541139392590">&#128241; +54 11 3939-2590</a>
-          <span class="dot">●</span>
-          <a href="https://www.linkedin.com/in/alanpalmas" target="_blank">&#128279; linkedin.com/in/alanpalmas</a>
-          <span class="dot">●</span>
-          <a href="https://alanpalmas.github.io" target="_blank">&#128187; alanpalmas.github.io</a>
-          <span class="dot">●</span>
-          <span>&#127758; Buenos Aires, Argentina — Disponible para trabajo remoto</span>
+          <span class="contact-item"><span class="contact-label">Email:</span> <a href="mailto:alanrpalmas@gmail.com">alanrpalmas@gmail.com</a></span>
+          <span class="dot">·</span>
+          <span class="contact-item"><span class="contact-label">Tel:</span> <a href="tel:+541139392590">+54 11 3939-2590</a></span>
+          <span class="dot">·</span>
+          <span class="contact-item"><span class="contact-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/alanpalmas" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/alanpalmas</a></span>
+          <span class="dot">·</span>
+          <span class="contact-item"><span class="contact-label">Web:</span> <a href="https://alanpalmas.github.io" target="_blank" rel="noopener noreferrer">https://alanpalmas.github.io</a></span>
+          <span class="dot">·</span>
+          <span class="contact-item"><span class="contact-label">Ubicación:</span> Buenos Aires, Argentina — trabajo remoto</span>
         </div>
       </div>
       <div class="photo-wrap">
@@ -338,11 +390,20 @@
   <!-- ══════════════════════ CUERPO ══════════════════════ -->
   <main class="body">
 
+    <!-- ATS print-only header: name + contact as first text in body stream -->
+    <div class="print-header">
+      <div class="ph-name">Alan Palmas</div>
+      <div class="ph-title">Ingeniero de Calidad de Software (QA Engineer) | Automatización | FinTech y Banca</div>
+      <div class="ph-contact">
+        Email: alanrpalmas@gmail.com · Tel: +54 11 3939-2590 · LinkedIn: https://www.linkedin.com/in/alanpalmas · Web: https://alanpalmas.github.io · Ubicación: Buenos Aires, Argentina — trabajo remoto
+      </div>
+    </div>
+
     <!-- ── PERFIL PROFESIONAL ── -->
     <section class="section summary">
       <div class="section-title">Perfil Profesional</div>
       <p>
-        Ingeniero de Calidad de Software con <strong>más de 5 años de experiencia</strong> en testing manual y automatizado y
+        <strong>Quality Assurance (QA) / Software Testing</strong> — Ingeniero de Calidad de Software con <strong>más de 5 años de experiencia</strong> en testing manual y automatizado y
         <strong>control de calidad (QC) de software</strong> para <strong>productos FinTech y bancarios</strong>.
         Historial comprobado en el diseño y ejecución de estrategias de prueba end-to-end en plataformas
         <strong>mobile (iOS y Android) y web/desktop</strong>, con dominio de
@@ -389,11 +450,11 @@
           <div class="cat-name">Dominio y Metodologías</div>
           <div class="cat-items">FinTech · Banca · SaaS · Agile/Scrum · Kanban · Android · iOS · Web · Desktop · Testing Multiplataforma · Cross-Browser Testing · Flujos de Pago</div>
         </div>
-        <div class="skill-cat" style="grid-column: span 2;">
+        <div class="skill-cat skill-cat-wide">
           <div class="cat-name">IA y Herramientas Internas de QA <span style="font-weight:400; color:#00B3FF; font-size:8.5pt;">— Desarrolladas en Galileo</span></div>
           <div class="cat-items">Generación de Casos de Prueba con IA · Integración LLM · Figma MCP · Procesamiento Multi-formato (PDF, DOCX, HTML, MP4, Excel, Capturas) · Automatización de Reportes Zephyr · Generación de Informes para Stakeholders · Desarrollo de Herramientas Internas</div>
         </div>
-        <div class="skill-cat" style="grid-column: span 2;">
+        <div class="skill-cat skill-cat-wide">
           <div class="cat-name">Actualmente Capacitándome <span style="font-weight:400; color:#00B3FF; font-size:8.5pt;">— En Curso</span></div>
           <div class="cat-items">Kotlin &amp; Jetpack Compose (Desarrollo Nativo Android) &nbsp;·&nbsp; Flutter / Dart (Desarrollo Mobile Multiplataforma)</div>
         </div>
@@ -574,46 +635,80 @@
 
     <div class="footer-note">
       Disponible para posiciones full-time, contratos y trabajo remoto &nbsp;·&nbsp;
-      Portfolio: <a onclick="window.open('https://alanpalmas.github.io')" style="color:#0090CC;cursor:pointer;">alanpalmas.github.io</a> &nbsp;·&nbsp;
-      LinkedIn: <a onclick="window.open('https://www.linkedin.com/in/alanpalmas')" style="color:#0090CC;cursor:pointer;">linkedin.com/in/alanpalmas</a>
+      Portfolio: <a href="https://alanpalmas.github.io" target="_blank" rel="noopener noreferrer" style="color:#0090CC;">https://alanpalmas.github.io</a> &nbsp;·&nbsp;
+      LinkedIn: <a href="https://www.linkedin.com/in/alanpalmas" target="_blank" rel="noopener noreferrer" style="color:#0090CC;">https://www.linkedin.com/in/alanpalmas</a>
     </div>
 
   </main>
 </div>
 
-<!-- ── Botón de descarga (oculto al imprimir) ── -->
-<a href="/pdf/cv-es.pdf" download="Alan_Palmas_QA_Engineer_CV_ES.pdf" id="cv-download-btn"
-   title="Descargar PDF">
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-       fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="7 10 12 15 17 10"/>
-    <line x1="12" y1="15" x2="12" y2="3"/>
-  </svg>
-  Descargar PDF
-</a>
+<!-- Acciones: PDF generado en repo (npm run cv:pdf) o imprimir desde el navegador -->
+<div class="cv-actions" id="cv-actions">
+  <a href="pdf/cv-es.pdf" download="Alan_Palmas_QA_Engineer_CV_ES.pdf" class="cv-btn cv-btn-primary" title="PDF generado desde esta página (ejecutá npm run cv:pdf tras cambios)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Descargar PDF
+  </a>
+  <button type="button" class="cv-btn cv-btn-secondary" id="cv-print-btn" title="Imprimir o Guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 9 6 2 18 2 18 9"/>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+      <rect x="6" y="14" width="12" height="8"/>
+    </svg>
+    Imprimir
+  </button>
+</div>
 <style>
-  #cv-download-btn {
+  .cv-actions {
     position: fixed;
-    top: 20px; right: 24px;
-    display: flex; align-items: center; gap: 8px;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    z-index: 9999;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .cv-btn-primary {
     background: #00B3FF;
     color: #fff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 13px; font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
     box-shadow: 0 4px 18px rgba(0,179,255,0.35);
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    z-index: 9999;
   }
-  #cv-download-btn:hover {
+  .cv-btn-primary:hover {
     background: #009ae0;
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(0,179,255,0.5);
   }
-  @media print { #cv-download-btn { display: none !important; } }
+  .cv-btn-secondary {
+    background: #1e293b;
+    color: #e2e8f0;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
+  .cv-btn-secondary:hover {
+    background: #334155;
+    transform: translateY(-2px);
+  }
+  @media print { .cv-actions { display: none !important; } }
 </style>
+<script>
+  document.getElementById('cv-print-btn').addEventListener('click', function () { window.print(); });
+</script>
 </body>
 </html>
