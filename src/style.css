@@ -589,14 +589,42 @@ body.cursor-hover .cursor-ring {
   isolation: isolate;
 }
 
+/* minmax(0, 1fr): el contenido ancho (tags largos) no rompe el ancho de columna en ningún breakpoint */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+/* Card destacada (más contenido): fila completa para no romper alineación con vecinas */
+@media (min-width: 769px) {
+  .skill-cat--featured {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+}
+
+/* 2 cols + última card suelta (no featured): centrada y ancho acotado */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .skills-grid .skill-cat:last-child:nth-child(odd):not(.skill-cat--featured) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 420px);
+    max-width: 100%;
+  }
 }
 
 .skill-cat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 1.75rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -619,10 +647,27 @@ body.cursor-hover .cursor-ring {
   font-weight: 600;
   color: var(--text-1);
   margin-bottom: 1rem;
-  display: flex; align-items: center; gap: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.45rem 0.6rem;
+  line-height: 1.35;
+}
+
+/* Título largo + badge: columna para alinear con el resto de cards y evitar overflow en grid */
+.skill-cat--featured .skill-cat-name {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.skill-cat-title {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .skill-cat-badge {
+  flex-shrink: 0;
   padding: 0.2rem 0.6rem;
   font-size: 0.7rem; font-weight: 500;
   color: var(--accent);
@@ -631,7 +676,13 @@ body.cursor-hover .cursor-ring {
 }
 
 .skill-tags {
-  display: flex; flex-wrap: wrap; gap: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  flex: 1;
+  align-content: flex-start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .stag {
@@ -644,6 +695,8 @@ body.cursor-hover .cursor-ring {
   transition: color var(--t), border-color var(--t), background var(--t);
   opacity: 0;
   transform: translateY(10px);
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .stag:hover {
   color: var(--text-1);
@@ -1110,7 +1163,7 @@ body.cursor-hover .cursor-ring {
 @media (max-width: 1024px) {
   :root { --section-py: 6rem; }
 
-  .skills-grid          { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .projects-grid        { grid-template-columns: repeat(2, 1fr); }
   .proj-card--centered  { grid-column: auto; }
   .about-grid          { grid-template-columns: 1fr; gap: 3rem; }
@@ -1145,7 +1198,7 @@ body.cursor-hover .cursor-ring {
   .timeline-card { max-width: 100%; width: 100%; }
 
   /* Skills */
-  .skills-grid         { grid-template-columns: 1fr; }
+  .skills-grid         { grid-template-columns: minmax(0, 1fr); }
   .skill-cat--featured { grid-column: span 1; }
 
   /* Projects */
